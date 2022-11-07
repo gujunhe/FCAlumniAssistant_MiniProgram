@@ -1,2 +1,3 @@
 <!--pages/home/home.wxml-->
-<text>pages/home/home.wxml</text>
+<l-avatar size="80" icon="user" />
+
