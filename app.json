@@ -34,5 +34,11 @@
       }
     ]
   },
-  "lazyCodeLoading": "requiredComponents"
+  "lazyCodeLoading": "requiredComponents",
+  "plugins": {
+    "wxPano": {
+      "version": "2.1.4",
+      "provider": "wx386c038238531f87"
+    }
+  }
 }
