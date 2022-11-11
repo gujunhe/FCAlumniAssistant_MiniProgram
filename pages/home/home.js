@@ -6,9 +6,29 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+      grids:[
+        {
+            image:"/images/icon/live.png",
+            text:"晚会直播"
+        }
+        ,{
+          image:"/images/icon/navigation.png",
+          text:"校园导航"
+        }
+        ,{
+          image:"/images/icon/school.png",
+          text:"校园参观"
+        }
+        ,{
+          image:"/images/icon/questions.png",
+          text:"有奖答题"
+        }
+        ,{
+          image:"/images/icon/donations.png",
+          text:"校友捐款"
+        }
+      ]
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
@@ -20,46 +40,10 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady() {
-    wxPano.onReady = function () { //wxPano初始化完成后会触发此事件
+    
 
     }
-    wxPano.config({
-    panolist:[{
-      name:"xindamen",
-      src: "https://7072-prod-3g07ynlp121f9201-1314224843.tcb.qcloud.la/andes2.jpg?sign=5b3645c7c8c5320934f0302f1b347b5c&t=1667907959",
-      infospots:[ //信息标记
-      ]
-    }],
-    request:wx.request,
-    loader:"GLLoader",
-    entryname:"xindamen"});
-  },
-  covertap:function(){
-    var panoId=wxPano.addPano({
-      name: "dongdamen",
-      src: 'https://www.aiotforest.com/pano-1-2048-1024.jpg',
-      infospots: [{
-        type: "pano",
-        entryname: "xindamen",
-        position: { x: 0.695, y: 0.503 },
-        size: 1,
-        icon: "arrow"
-      }, {
-        type: "modal",
-        modal: {
-          title: "东大门",
-          content: "对面有公交站和唐家湾轻轨站"
-        },
-        position: { x: 0.092, y: 0.434 },
-        size: 1,
-        icon: "info"
-      }]
-    });
-    wxPano.navigateMethod({
-      type: "pano",
-      entryname: "dongdamen"
-    });
-  },
+  ,
  
   /**
    * 生命周期函数--监听页面显示
@@ -74,7 +58,39 @@ Page({
   onHide() {
 
   },
+  linitemtap(e)
+  {
+      console.log(e.detail)
+      switch(e.detail.index)
+      {
+        case 0:
+          break;
+        case 1:
+          let plugin = requirePlugin('routePlan');
+          let key = 'P2KBZ-H7FKU-SE4VQ-BSQF6-YYK2F-ADF6T';  //使用在腾讯位置服务申请的key
+          let referer = 'FC校友助手';   //调用插件的app的名称
+          let endPoint = JSON.stringify({  //终点
+          'name': '福州大学计算机与大数据学院院庆地点',
+          'latitude': 26.058956,
+        'longitude': 119.197671
+          });
+          wx.navigateTo({
+          url: 'plugin://routePlan/index?key=' + key + '&referer=' + referer + '&endPoint=' + endPoint
+});
+          break;
+        case 2:
+          wx.navigateTo({
+            url: '/pages/school-map/school-map',
+          })
+          break;
+        case 3:
+          break;
+        case 4:
+         break;
+      }
 
+    
+  },
   /**
    * 生命周期函数--监听页面卸载
    */

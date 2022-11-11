@@ -1,2 +1,22 @@
-<pano panolist="{{panolist}}" entryid="{{entrypanoid}}" entryname="{{entrypanoname}}" width="320" height="240" key="{{key}}" autoinit="{{false}}">
-</pano>
+<view class="container">
+<swiper class="swiper-wrap" circular="true" interval="3000" indicator-dots="true" autoplay="true">
+  <swiper-item>
+    <image src="/images/swiper-item.png"></image>
+  </swiper-item>
+  <swiper-item>
+    <image src="/images/swiper-item.png"></image>
+  </swiper-item>
+  <swiper-item>
+    <image src="/images/swiper-item.png"></image>
+  </swiper-item>
+</swiper>
+<l-grid l-class="grid" row-num="5" >
+
+  <l-grid-item wx:key="*this" wx:for="{{grids}}" wx:for-index="idx" key="{{idx}}" slot="{{idx}}" bind:linitemtap="linitemtap"	>
+        <image class="icon" src="{{item.image}}" />
+        <view class="grid-text">{{item.text}}</view>
+    </l-grid-item>
+
+</l-grid>
+
+</view>

@@ -2,7 +2,8 @@
   "pages": [
     "pages/home/home",
     "pages/mine/mine",
-    "pages/meetup/meetup"
+    "pages/meetup/meetup",
+    "pages/school-map/school-map"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -39,6 +40,15 @@
     "wxPano": {
       "version": "2.1.4",
       "provider": "wx386c038238531f87"
+    },
+    "routePlan": {
+      "version": "1.0.19",
+      "provider": "wx50b5593e81dd937a"
+    }
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序定位"
     }
   }
 }
