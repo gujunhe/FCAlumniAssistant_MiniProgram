@@ -64,6 +64,31 @@ Page({
       switch(e.detail.index)
       {
         case 0:
+        
+          wx.openChannelsActivity({
+            finderUserName:'sphtpyMYTNuAZU5',
+            feedId:'export/UzFfAgtgekIEAQAAAAAAl1wvK19mvQAAAAstQy6ubaLX4KHWvLEZgBPEpYJcOjc4Hv-BzNPgMJrq_7nPKa6ouzSbDrCP7Lxh',
+            success:(res)=>{
+        
+                console.log(res)
+               
+            },
+            fail:(err)=>{
+        
+              console.log(err)
+             
+          }
+            
+          });
+          wx.openChannelsUserProfile({
+            finderUserName:'sphtpyMYTNuAZU5',
+            success:(res)=>{
+        
+              console.log(res.headUrl)
+          }
+          })
+
+    
           break;
         case 1:
           let plugin = requirePlugin('routePlan');
