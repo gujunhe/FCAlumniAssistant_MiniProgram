@@ -15,7 +15,8 @@ swiper image{
   width: 100%;
   height: 440rpx;
 }
-.swiper-wrap{
+..swiper-wrap
+.     .swiper-wrap{
   overflow: hidden;
   border-radius: 15rpx; 
   transform: translateY(0); 

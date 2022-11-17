@@ -1,2 +1,11 @@
-<!--pages/mine/mine.wxml-->
-<text>pages/mine/mine.wxml</text>
+<view class="userinfo-container">
+<view class="avatar-nickname">
+<button class="avatar-wrapper"
+open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar"
+>
+<l-avatar class="avatar" src="{{avatarUrl}}" />
+</button> 
+<input type="nickname" class="weui-input" placeholder="请输入昵称"/>
+</view>
+
+</view>

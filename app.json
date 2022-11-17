@@ -35,6 +35,10 @@
       }
     ]
   },
+  
+  "useExtendedLib": {
+    "weui": true
+  },
   "lazyCodeLoading": "requiredComponents",
   "plugins": {
     "wxPano": {

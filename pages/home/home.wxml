@@ -15,7 +15,7 @@
   <l-grid-item wx:key="*this" wx:for="{{grids}}" wx:for-index="idx" key="{{idx}}" slot="{{idx}}" bind:linitemtap="linitemtap"	>
         <image class="icon" src="{{item.image}}" />
         <view class="grid-text">{{item.text}}</view>
-    </l-grid-item>
+  </l-grid-item>
 
 </l-grid>
 <view></view>
