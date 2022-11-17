@@ -18,5 +18,5 @@
   </l-grid-item>
 
 </l-grid>
-<view></view>
+<view class="alumnus-container"></view>
 </view>

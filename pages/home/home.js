@@ -110,8 +110,14 @@ Page({
           })
           break;
         case 3:
+          wx.navigateTo({
+            url: '/pages/question/question',
+          })
           break;
         case 4:
+          wx.navigateTo({
+            url: '/pages/donation/donation',
+          })
          break;
       }
 

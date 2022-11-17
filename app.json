@@ -3,7 +3,10 @@
     "pages/home/home",
     "pages/mine/mine",
     "pages/meetup/meetup",
-    "pages/school-map/school-map"
+    "pages/school-map/school-map",
+    "pages/donation/donation",
+    "pages/question/question",
+    "pages/alumnus-detail/alumnus-detail"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -35,7 +38,6 @@
       }
     ]
   },
-  
   "useExtendedLib": {
     "weui": true
   },
