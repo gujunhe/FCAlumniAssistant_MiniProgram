@@ -3,16 +3,16 @@ App({
   onLaunch() {
     //用户数据的全局变量
     const userInfo=this.globalData.userInfo
-    wx.getStorage({
-      key: 'openId',
-      success (res) {
-        userInfo.openiId =res.data
-        console.log(res.data)
-      }
-    })
+    // wx.getStorage({
+    //   key: 'openId',
+    //   success (res) {
+    //     userInfo.openiId =res.data
+    //     console.log(res.data)
+    //   }
+    // })
     //如果本地没有用户的标识ID，则向后端发起请求
-    if(true)
-    {
+    // if(true)
+    // {
     // 登录
     wx.login({     
       success (res) {
@@ -29,22 +29,22 @@ App({
           //请求成功后修改全局变量
           userInfo.certified=true
           //缓存存openId
-         wx.setStorage({
-          key: 'openId',
-          data: 'aaaaa'
-          })
+        //  wx.setStorage({
+        //   key: 'openId',
+        //   data: 'aaaaa'
+        //   })
 
         } else {
           console.log('登录失败！' + res.errMsg)
         }
       }
     })
-    }
-    //如果有openid则发起请求获取用户信息
-    else{
-    //请求成功后修改全局变量
-    userInfo.certified=true
-    }
+    // }
+    // //如果有openid则发起请求获取用户信息
+    // else{
+    // //请求成功后修改全局变量
+    // userInfo.certified=true
+    // }
   },
   globalData: {
     //用户数据的全局变量

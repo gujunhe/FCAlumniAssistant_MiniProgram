@@ -5,14 +5,45 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    certificate:{
+      openid:"",
+      name:"",
+      roommatename:"",
+      phoneNumber:"",
+      graduationTime:"请输入毕业年份",
+      major:"",
+      banji:"",
+      department:""
+    }
+      
   },
+  bindDateChange(event)
+  {
+      console.log(event.detail.value)
+      this.setData({
+        date:event.detail.value
+      }
+      )
+  },
+  bindsuccess(event)
 
+  {
+    console.log(event)
+  },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad(options) {
+  bindfail(event){
+    console.log(event)
 
+  }
+  ,
+  submitForm()
+  {
+    validate
+  },
+  onLoad(options) {
+ 
   },
 
   /**
