@@ -11,7 +11,7 @@ App({
       }
     })
     //如果本地没有用户的标识ID，则向后端发起请求
-    if(userInfo.openid=='')
+    if(true)
     {
     // 登录
     wx.login({     

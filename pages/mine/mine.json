@@ -1,3 +1,5 @@
 {
-  "usingComponents": {"l-avatar":"/miniprogram_npm/lin-ui/avatar"}
+  "usingComponents": {"l-avatar":"/miniprogram_npm/lin-ui/avatar",
+  "l-list":"/miniprogram_npm/lin-ui/list",
+"l-progress":"/miniprogram_npm/lin-ui/progress"}
 }

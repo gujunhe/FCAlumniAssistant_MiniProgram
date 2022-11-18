@@ -11,7 +11,6 @@
   </swiper-item>
 </swiper>
 <l-grid l-class="grid" row-num="5" >
-
   <l-grid-item wx:key="*this" wx:for="{{grids}}" wx:for-index="idx" key="{{idx}}" slot="{{idx}}" bind:linitemtap="linitemtap"	>
         <image class="icon" src="{{item.image}}" />
         <view class="grid-text">{{item.text}}</view>

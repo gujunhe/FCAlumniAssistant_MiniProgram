@@ -7,5 +7,11 @@ open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar"
 </button> 
 <input type="nickname" class="weui-input" placeholder="请输入昵称"/>
 </view>
+<view class="userinfo-detail">
+<l-list title="个人信息"  />
+<l-list title="我的校友"  />
+<l-list title="意见反馈"  />
+<l-list title="关于我们"  />
+</view>
 
 </view>

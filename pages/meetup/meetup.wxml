@@ -1,4 +1,2 @@
-<mp-dialog title="test" show="{{true}}" bindbuttontap="tapDialogButton" buttons="{{[{text: '取消'}, {text: '确认'}]}}">
-    <view>test content</view>
-</mp-dialog>
+
 

@@ -1,18 +1,11 @@
-// pages/mine/mine.js
-const filter = require('../../utils/filter');
-Page(filter.loginCheck({
-  
-  onChooseAvatar(e) {
-    const { avatarUrl } = e.detail 
-    this.setData({
-      avatarUrl,
-    })
-  },
+// pages/certificate/certificate.js
+Page({
+
   /**
    * 页面的初始数据
    */
   data: {
-    avatarUrl: 'https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia07jQodd2FJGIYQfG0LAJGFxM4FbnQP6yfMxBgJ0F3YRqJCJ1aPAK2dQagdusBZg/0'
+
   },
 
   /**
@@ -70,4 +63,4 @@ Page(filter.loginCheck({
   onShareAppMessage() {
 
   }
-}));
+})
