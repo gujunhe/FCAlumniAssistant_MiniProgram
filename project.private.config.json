@@ -5,13 +5,20 @@
     "compileHotReLoad": true,
     "urlCheck": false
   },
-  "libVersion": "2.27.1",
+  "libVersion": "2.27.2",
   "condition": {
     "miniprogram": {
       "list": [
         {
           "name": "",
           "pathName": "pages/certificate/certificate",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/alumnus-detail/alumnus-detail",
           "query": "",
           "launchMode": "default",
           "scene": null
