@@ -1,6 +1,5 @@
 // pages/home/home.js
 var wxPano = requirePlugin("wxPano")
-const app=getApp();
 Page({
 
   /**
@@ -34,7 +33,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    console.log(app.globalData.userInfo)
+    console.log(getApp().globalData.userInfo)
   },
 
   /**

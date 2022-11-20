@@ -1,5 +1,6 @@
 // pages/meetup/meetup.js
-Page({
+const filter = require('../../utils/filter');
+Page(filter.loginCheck({
 
   /**
    * 页面的初始数据
@@ -63,4 +64,4 @@ Page({
   onShareAppMessage() {
 
   }
-})
+}))

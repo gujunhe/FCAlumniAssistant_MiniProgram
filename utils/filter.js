@@ -4,7 +4,7 @@ function loginCheck(pageObj) {
       let _onLoad = pageObj.onLoad;
       // 使用onLoad的话需要传递options
       pageObj.onLoad = function (options) {
-          if(getApp().globalData.userInfo.certified==true) {
+          if(getApp().globalData.userInfo.flag==true) {
               // 获取当前页面
               let currentInstance = getPageInstance();
               _onLoad.call(currentInstance, options);
