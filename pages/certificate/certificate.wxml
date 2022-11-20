@@ -1,0 +1,31 @@
+<mp-form>
+<!--WXML示例代码-->
+  <mp-cells ext-class="my-cells" bindfail="bindfail" bindsuccess="bindsuccess">
+    <mp-cell title="姓名" show-error prop="name">
+    <input name="name" rules="{required}"  type="text" placeholder="请输入姓名"></input>
+    </mp-cell>
+    <mp-cell title="大学舍友" show-error>
+    <input type="text" placeholder="请输入一位大学舍友的名字" required></input>
+    </mp-cell>
+    <mp-cell title="手机号" show-error>
+    <input type="number" placeholder="请输入手机号"></input>
+    </mp-cell>
+    <mp-cell title="毕业年份"show-error>
+    <picker fields="year" mode="date" bindchange="bindDateChange">
+    <text style="color: grey;"> {{certificate.graduationTime}}  </text>
+  </picker>
+    </mp-cell>
+    <mp-cell title="专业" show-error>
+    <input type="text" placeholder="请输入专业"></input>
+    </mp-cell>
+    <mp-cell title="班级" show-error>
+    <input type="number" placeholder="请输入班级，输入数字即可"></input>
+    </mp-cell>
+    <mp-cell title="部门" show-error>
+    <input type="text" placeholder="选填"></input>
+    </mp-cell>
+  </mp-cells>
+</mp-form>
+<view class="weui-btn-area">
+    <button class="weui-btn" type="primary" bindtap="submitForm">认证</button>
+  </view>

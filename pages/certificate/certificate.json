@@ -1,0 +1,17 @@
+{
+  "usingComponents": { 
+    "l-form":"/miniprogram_npm/lin-ui/form",
+    "l-form-item":"/miniprogram_npm/lin-ui/form-item",
+    "l-input":"/miniprogram_npm/lin-ui/input",
+    "l-button":"/miniprogram_npm/lin-ui/button",
+    "l-calendar":"/miniprogram_npm/lin-ui/calendar",
+    "mp-cells": "weui-miniprogram/cells/cells",
+    "mp-cell": "weui-miniprogram/cell/cell",
+    "mp-form": "weui-miniprogram/form/form"
+
+  },  
+  "navigationBarTitleText": "校友认证",
+  "navigationBarBackgroundColor": "#FFFFFF",
+  "navigationBarTextStyle": "black"
+  
+}

@@ -1,25 +1,49 @@
-// pages/mine/mine.js
-const filter = require('../../utils/filter');
-Page(filter.loginCheck({
-  
-  onChooseAvatar(e) {
-    const { avatarUrl } = e.detail 
-    this.setData({
-      avatarUrl,
-    })
-  },
+// pages/certificate/certificate.js
+Page({
+
   /**
    * 页面的初始数据
    */
   data: {
-    avatarUrl: 'https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia07jQodd2FJGIYQfG0LAJGFxM4FbnQP6yfMxBgJ0F3YRqJCJ1aPAK2dQagdusBZg/0'
+    certificate:{
+      openid:"",
+      name:"",
+      roommatename:"",
+      phoneNumber:"",
+      graduationTime:"请输入毕业年份",
+      major:"",
+      banji:"",
+      department:""
+    }
+      
   },
+  bindDateChange(event)
+  {
+      console.log(event.detail.value)
+      this.setData({
+        date:event.detail.value
+      }
+      )
+  },
+  bindsuccess(event)
 
+  {
+    console.log(event)
+  },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad(options) {
+  bindfail(event){
+    console.log(event)
 
+  }
+  ,
+  submitForm()
+  {
+    validate
+  },
+  onLoad(options) {
+ 
   },
 
   /**
@@ -70,4 +94,4 @@ Page(filter.loginCheck({
   onShareAppMessage() {
 
   }
-}));
+})

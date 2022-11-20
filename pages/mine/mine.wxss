@@ -16,7 +16,7 @@ button::after{
   margin-left: 5rpx;
   margin-top: 15rpx;
   width: 120px;
-  height: 120px;
+  height: 120rpx;
   padding: 0rpx;
   background: none;
   background-color: transparent;
@@ -29,4 +29,9 @@ button::after{
 .weui-input{
   margin-top: 60rpx;
   margin-left: 20rpx;
+}
+.userinfo-detail{
+
+margin-left: 25rpx;
+margin-right: 25rpx;
 }

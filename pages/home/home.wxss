@@ -39,9 +39,143 @@ swiper image{
 }
 .alumnus-container
 {
-
+  display: flex;
   height: 1000rpx;
   border-radius: 15rpx;
   margin: 10rpx;
   background-color: white;
 }
+
+.news0{
+  font-size: 40rpx;
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+  color: rgb(206, 25, 25);
+}
+.dianzan{
+  margin-left: 10rpx;
+  margin-top: 35rpx;
+  height: 40rpx;
+  width:  30rpx;
+}
+.news1{
+  font-size: 25rpx;
+  margin-left:  -190rpx;
+  margin-top: 90rpx;
+  color: rgb(0, 0, 0);
+}
+.news1_1{
+  font-size: 25rpx;
+  margin-left:  150rpx;
+  margin-top: 90rpx;
+  color: rgb(0, 0, 0);
+}
+.news2{
+  font-size: 25rpx;
+  margin-left:  -680rpx;
+  margin-top: 130rpx;
+  color: rgb(0, 0, 0);
+}
+.news2_1{
+  font-size: 25rpx;
+  margin-left:  127rpx;
+  margin-top: 130rpx;
+  color: rgb(0, 0, 0);
+}
+.news3{
+  font-size: 25rpx;
+  margin-left:  -680rpx;
+  margin-top: 170rpx;
+  color: rgb(0, 0, 0);
+}
+.news3_1{
+  font-size: 25rpx;
+  margin-left:  135rpx;
+  margin-top: 170rpx;
+  color: rgb(0, 0, 0);
+}
+.news4{
+  font-size: 25rpx;
+  margin-left:  -680rpx;
+  margin-top: 210rpx;
+  color: rgb(0, 0, 0);
+}
+.news4_1{
+  font-size: 25rpx;
+  margin-left:  100rpx;
+  margin-top: 210rpx;
+  color: rgb(0, 0, 0);
+}
+.news5{
+  font-size: 25rpx;
+  margin-left:  -680rpx;
+  margin-top: 250rpx;
+  color: rgb(0, 0, 0);
+}
+.news5_1{
+  font-size: 25rpx;
+  margin-left:  100rpx;
+  margin-top: 250rpx;
+  color: rgb(0, 0, 0);
+}
+.news6{
+  font-size: 25rpx;
+  margin-left:  -680rpx;
+  margin-top: 290rpx;
+  color: rgb(0, 0, 0);
+}
+.news6_1{
+  font-size: 25rpx;
+  margin-left:  85rpx;
+  margin-top: 290rpx;
+  color: rgb(0, 0, 0);
+}
+.act0{
+  margin-left:  -680rpx;
+  margin-top: 340rpx;
+  font-size: 40rpx;
+  color: rgb(206, 25, 25);
+}
+.act1{
+  margin-left:  -153rpx;
+  margin-top: 400rpx;
+  font-size: 25rpx;
+  color: rgb(0, 0, 0);
+}
+.act2{
+  margin-left:  -493rpx;
+  margin-top: 440rpx;
+  font-size: 25rpx;
+  color: rgb(0, 0, 0);
+}
+.act3{
+  margin-left:  -393rpx;
+  margin-top: 480rpx;
+  font-size: 25rpx;
+  color: rgb(0, 0, 0);
+}
+.act4{
+  margin-left:  -369rpx;
+  margin-top: 520rpx;
+  font-size: 25rpx;
+  color: rgb(0, 0, 0);
+}
+.act5{
+  margin-left:  -566rpx;
+  margin-top: 560rpx;
+  font-size: 25rpx;
+  color: rgb(0, 0, 0);
+}
+.act6{
+  margin-left:  -517rpx;
+  margin-top: 600rpx;
+  font-size: 25rpx;
+  color: rgb(0, 0, 0);
+}
+.act7{
+  margin-left:  -442rpx;
+  margin-top: 640rpx;
+  font-size: 25rpx;
+  color: rgb(0, 0, 0);
+}
+

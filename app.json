@@ -7,7 +7,8 @@
     "pages/donation/donation",
     "pages/question/question",
     "pages/alumnus-detail/alumnus-detail",
-    "pages/description/description"
+    "pages/description/description",
+    "pages/certificate/certificate"
   ],
   "window": {
     "backgroundTextStyle": "light",
