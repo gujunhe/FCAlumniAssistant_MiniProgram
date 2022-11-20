@@ -4,8 +4,8 @@
   padding: 15rpx;
   margin: 15rpx;
   border-radius: 8rpx;
-  border: 1rpx #49b877;
-  box-shadow: 1rpx 1rpx 15rpx #ddd;
+  border: 1rpx #ffffff;
+  box-shadow: 1rpx 1rpx 15rpx rgb(156, 155, 155);
 }
 .picture image{
   width: 180rpx;

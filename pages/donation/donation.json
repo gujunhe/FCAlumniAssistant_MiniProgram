@@ -4,5 +4,8 @@
 
   },
   "enablePullDownRefresh": true,
-  "onReachBottomDistance": 50
+  "onReachBottomDistance": 50,
+  "navigationBarTitleText": "校友捐款",
+  "navigationBarBackgroundColor": "#FFFFFF",
+  "navigationBarTextStyle": "black"
 }

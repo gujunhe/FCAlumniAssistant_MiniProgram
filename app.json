@@ -6,7 +6,8 @@
     "pages/school-map/school-map",
     "pages/donation/donation",
     "pages/question/question",
-    "pages/alumnus-detail/alumnus-detail"
+    "pages/alumnus-detail/alumnus-detail",
+    "pages/description/description"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -11,6 +11,12 @@ Page({
     pageSize : 10,
     total: 0
   },
+  getConcreteInfo(){
+    wx.redirectTo({
+      url: '/pages/description/description?id=this.data.',
+    })
+    console.log('test now!')
+  },
   getDonateList(cb){
     this.setData({
       isloading : true
@@ -41,9 +47,7 @@ Page({
       }
     })
   },
-  getConcreteInfo(){
-    
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
