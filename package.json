@@ -1,5 +1,7 @@
 {
   "dependencies": {
-    "lin-ui": "^0.9.12"
+    "@vant/weapp": "^1.10.6",
+    "lin-ui": "^0.9.12",
+    "mobx-miniprogram": "^4.13.2"
   }
 }

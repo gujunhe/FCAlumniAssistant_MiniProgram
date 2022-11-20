@@ -1,6 +1,13 @@
 {
   "description": "项目配置文件",
   "setting": {
+    "packNpmManually": true,
+    "packNpmRelationList": [
+      {
+        "packageJsonPath": "./package.json",
+        "miniprogramNpmDistDir": "./miniprogram/"
+      }
+    ],
     "bundle": false,
     "userConfirmedBundleSwitch": false,
     "urlCheck": true,
@@ -21,9 +28,7 @@
     "enhance": true,
     "useMultiFrameRuntime": true,
     "showShadowRootInWxmlPanel": true,
-    "packNpmManually": false,
     "enableEngineNative": false,
-    "packNpmRelationList": [],
     "minifyWXSS": true,
     "showES6CompileOption": false,
     "minifyWXML": true,

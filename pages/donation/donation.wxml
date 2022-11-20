@@ -1,3 +1,13 @@
 <!--pages/donation/donation.wxml-->
-<text>捐款</text>
-<text>Test again</text>
+<view class="total" wx:for="{{donateList}}" wx:key="id" bindtap="getConcreteInfo">
+  <view class="picture">
+    <image src="{{item.images[0]}}" bindtap="getConcreteInfo"></image>
+  </view >
+  <view class="info" bindtap="getConcreteInfo">
+    <text>{{item.name}}</text>
+    <text>地址：{{item.address}}</text>
+    <text>电话：{{item.phone}}</text>
+    <!-- 后端确定进度条数值 -->
+    <l-progress percent="50" show-info="{{true}}" text-color='black' text-position="right" active-color="#49b877" background-color="#BEBEBE" > </l-progress>
+  </view>
+</view>
