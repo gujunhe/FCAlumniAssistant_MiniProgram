@@ -1,2 +1,4 @@
-
-
+<view class="meetup">
+<l-list title="我的班级" icon="user" icon-color="#F4516C" tag-position="right"  tagShape="circle" badge-count="999" badge-position="right"/>
+<l-list title="我的社团" icon="user" icon-color="#F4516C"  tagShape="circle" tag-position="right" badge-count="999" badge-position="right"/>
+</view>

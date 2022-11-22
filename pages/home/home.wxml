@@ -1,13 +1,13 @@
 <view class="container">
   <swiper class="swiper-wrap" circular="true" interval="3000" indicator-dots="true" autoplay="true">
     <swiper-item>
-      <image src="/images/swiper-item.png"></image>
+      <image src="cloud://prod-3g07ynlp121f9201.7072-prod-3g07ynlp121f9201-1314224843/小程序前台/swiper/swiper-item.png"></image>
     </swiper-item>
     <swiper-item>
-      <image src="/images/swiper-item.png"></image>
+      <image src="cloud://prod-3g07ynlp121f9201.7072-prod-3g07ynlp121f9201-1314224843/小程序前台/swiper/swiper-item.png"></image>
     </swiper-item>
     <swiper-item>
-      <image src="/images/swiper-item.png"></image>
+      <image src="cloud://prod-3g07ynlp121f9201.7072-prod-3g07ynlp121f9201-1314224843/小程序前台/swiper/swiper-item.png"></image>
     </swiper-item>
   </swiper>
   <l-grid l-class="grid" row-num="5" >
