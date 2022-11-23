@@ -3,6 +3,10 @@ App({
   onLaunch() {
     wx.cloud.init()
     const that=this
+    wx.showLoading({
+      title: '登录中',
+      mask:true
+    })
     wx.login({     
       success (res) {
         console.log('code为' + res.code)
@@ -24,16 +28,30 @@ App({
             if(response.data.success==true)
             {
               that.globalData.userInfo=response.data.content
+              wx.hideLoading()
             }
             //请求后端数据失败
             else{
               console.log("登录请求失败")
+
+              wx.hideLoading()
+              wx.showToast({
+                title: '服务器出现故障，登录失败',
+                icon: 'none',
+                duration: 2000
+              })
             }
           })
          
 
         } else {
           console.log('登录失败！' + res.errMsg)
+          wx.hideLoading()
+          wx.showToast({
+            title: '服务器出现故障，登录失败',
+            icon: 'none',
+            duration: 2000
+          })
         }
       }
     })
