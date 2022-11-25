@@ -1,0 +1,17 @@
+/* pages/map-detail/map-detail.wxss */
+.cover-view {
+  position: absolute;
+  top: calc(100% - 150rpx);
+  left: calc(50% - 100rpx);
+  /* opacity: .7; */
+}
+@keyframes dmAnimation{
+  from{ left: 100%; }
+  to{ left: -100%; }
+}
+.barrage {
+  width: 100%;
+  height: 40%;
+  position: absolute;
+  box-sizing: border-box;
+}

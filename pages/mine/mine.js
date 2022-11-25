@@ -4,9 +4,23 @@ Page(filter.loginCheck({
   
   onChooseAvatar(e) {
     const { avatarUrl } = e.detail 
+    console.log(e.detail)
     this.setData({
       avatarUrl,
     })
+    wx.cloud.uploadFile({
+      cloudPath: '小程序前台/avatar/'+getApp().globalData.userInfo.openid+'.jpg', // 对象存储路径，根路径直接填文件名，文件夹例子 test/文件名，不要 / 开头
+      filePath: e.detail.avatarUrl, // 微信本地文件，通过选择图片，聊天文件等接口获取
+      config: {
+        env: 'prod-3g07ynlp121f9201' // 需要替换成自己的微信云托管环境ID
+      }
+    }).then(res => {
+      console.log(res.fileID)
+    }).catch(error => {
+      console.error(error)
+    })
+
+    
   },
   /**
    * 页面的初始数据
@@ -19,8 +33,10 @@ Page(filter.loginCheck({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
-  },
+      this.setData({
+        avatarUrl:'cloud://prod-3g07ynlp121f9201.7072-prod-3g07ynlp121f9201-1314224843/小程序前台/avatar/'+getApp().globalData.userInfo.openid+'.jpg'
+        ,name:getApp().globalData.userInfo.name
+      })  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

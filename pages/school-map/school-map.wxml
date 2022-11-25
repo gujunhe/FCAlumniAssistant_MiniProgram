@@ -1,2 +1,3 @@
 <!--pages/school-map/school-map.wxml-->
-<map class="map" longitude="119.197668"  latitude="26.058958" markers="{{markers}}"></map>
+<map class="map" longitude="119.197668"  bindcallouttap="callouttap" latitude="26.058958" bindmarkertap="markertap"markers="{{markers}}">
+</map>

@@ -8,7 +8,8 @@
     "pages/question/question",
     "pages/alumnus-detail/alumnus-detail",
     "pages/description/description",
-    "pages/certificate/certificate"
+    "pages/certificate/certificate",
+    "pages/map-detail/map-detail"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -1,31 +1,33 @@
-<mp-form>
+<mp-toptips msg="{{errorMsg}}" type="error" show="{{errorMsg}}" delay="1500"></mp-toptips>
+<mp-form id="form" rules="{{rules}}" models="{{form}}">
 <!--WXML示例代码-->
   <mp-cells ext-class="my-cells" bindfail="bindfail" bindsuccess="bindsuccess">
-    <mp-cell title="姓名" show-error prop="name">
-    <input name="name" rules="{required}"  type="text" placeholder="请输入姓名"></input>
+    <mp-cell title="姓名"  prop="name">
+    <input bindinput="formInputChange" name="name" rules="{required}"  data-field="name" value="{{form.name}}"type="text" placeholder="请输入姓名"></input>
     </mp-cell>
-    <mp-cell title="大学舍友" show-error>
-    <input type="text" placeholder="请输入一位大学舍友的名字" required></input>
+    <mp-cell title="大学舍友" prop="roommatename">
+    <input bindinput="formInputChange" type="text" data-field="roommatename" value="{{form.roommatename}}" placeholder="请输入一位大学舍友的名字" ></input>
     </mp-cell>
-    <mp-cell title="手机号" show-error>
-    <input type="number" placeholder="请输入手机号"></input>
+    <mp-cell title="手机号" prop="phonenumber">
+    <input bindinput="formInputChange" type="number" data-field="phonenumber" value="{{form.phonenumber}}" placeholder="请输入手机号"></input> 
     </mp-cell>
-    <mp-cell title="毕业年份"show-error>
+    <mp-cell title="毕业年份" prop="graduationtime">
     <picker fields="year" mode="date" bindchange="bindDateChange">
-    <text style="color: grey;"> {{certificate.graduationTime}}  </text>
+    <text style="color: grey;" data-field="graduationtime" value="{{form.graduationTime}}"> {{form.graduationtime}}  </text>
   </picker>
     </mp-cell>
-    <mp-cell title="专业" show-error>
-    <input type="text" placeholder="请输入专业"></input>
+    <mp-cell title="专业" prop="academyname">
+    <input bindinput="formInputChange" type="text" data-field="academyname" value="{{form.academyname}}" placeholder="请输入专业"></input>
     </mp-cell>
-    <mp-cell title="班级" show-error>
-    <input type="number" placeholder="请输入班级，输入数字即可"></input>
+    <mp-cell title="班级" prop="banji" >
+    <input bindinput="formInputChange" type="number" data-field="banji" value="{{form.banji}}" placeholder="请输入班级，输入数字即可"></input>
     </mp-cell>
-    <mp-cell title="部门" show-error>
-    <input type="text" placeholder="选填"></input>
+    <mp-cell title="部门" prop="department">
+    <input bindinput="formInputChange" type="text" data-field="department" value="{{form.department}}" placeholder="选填"></input>
     </mp-cell>
   </mp-cells>
 </mp-form>
 <view class="weui-btn-area">
     <button class="weui-btn" type="primary" bindtap="submitForm">认证</button>
   </view>
+  <mp-loading show="{{loading}}" duration="350" type="circle"tips="认证中，请稍等" ></mp-loading>

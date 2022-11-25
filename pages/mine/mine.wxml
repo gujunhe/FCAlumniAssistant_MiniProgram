@@ -5,7 +5,7 @@ open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar"
 >
 <l-avatar class="avatar" src="{{avatarUrl}}" />
 </button> 
-<input type="nickname" class="weui-input" placeholder="请输入昵称"/>
+<input type="nickname" class="weui-input" placeholder="{{name}}"/>
 </view>
 <view class="userinfo-detail">
 <l-list title="个人信息"  />

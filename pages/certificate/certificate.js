@@ -5,23 +5,116 @@ Page({
    * 页面的初始数据
    */
   data: {
-    certificate:{
-      openid:"",
+    form:{
+      openId:"",
       name:"",
       roommatename:"",
-      phoneNumber:"",
-      graduationTime:"请输入毕业年份",
-      major:"",
-      banji:"",
+      phonenumber:"",
+      graduationtime:"请输入毕业年份",
+      academyname:"",
+      banji:null,
       department:""
-    }
-      
+    },
+    errorMsg: '', // 验证表单显示错误信息
+    loading:'',
+    rules: [
+      {
+        name: 'name',
+        rules: {required: true, message: '请填写姓名'},
+      },
+      {
+        name: 'roommatename',
+        rules: [{required: true, message: '请填写一位舍友名字'}, ]
+      },
+      {
+        name: 'phonenumber',
+        rules: [{required: true, message: '请填写电话'},{mobile: true, message: '电话格式不对'}]
+      },
+      {
+        name: 'graduationtime',
+        rules: {maxlength: 4, message: '请选择毕业年份'}
+      },
+      {
+        name: 'academyname',
+        rules: {required: true, message: '请填写专业名'}
+      },
+      {
+        name: 'banji',
+        rules: {required: true, message: '请填写班级'}
+      },
+      {
+        name: 'department',
+        rules: {required: false, message: '请填写部门'}
+      },
+    ],
+  },
+  formInputChange(e) {
+    const {field} = e.currentTarget.dataset
+    this.setData({
+      [`form.${field}`]: e.detail.value
+    })
+  },
+  submitForm()
+  {
+    this.selectComponent('#form').validate((valid, errors) => {
+      if (!valid) {
+        const firstError = Object.keys(errors)
+        if (firstError.length) {
+          this.setData({
+            errorMsg: errors[firstError[0]].message
+          })
+        }
+      } 
+       else {
+         const info=this.data.form
+        this.setData({
+          loading:"true"
+        })
+        console.log(info)
+        wx.cloud.callContainer({
+          "config": {
+            "env": "prod-3g07ynlp121f9201"
+          },
+          "path": "/WeixinUser/identify",
+          "header": {
+            "X-WX-SERVICE": "springboot-fchz",
+            "content-type": "application/x-www-form-urlencoded"
+          },
+          "method": "POST",
+          "data":
+            "openId="+getApp().globalData.userInfo.openid+"&name="+info.name+"&roommatename="+info.roommatename+"&phonenumber="+info.phonenumber+"&graduationtime="+info.graduationtime+"&major="+info.academyname+"&banji="+info.banji+"&department="+info.department
+        
+        }).then((response)=>{
+            
+          const data=response.data.content
+          console.log(data)
+            if(data.flag==false)
+            {
+              this.setData({
+                errorMsg:"信息有误，认证失败，请重试"
+              })
+            }
+            else{
+              getApp().globalData.userInfo=data
+              wx.showToast({
+                title: '认证成功',   
+              })
+              wx.redirectTo({
+                url: '/pages/home/home',
+              })
+            }
+            this.setData({
+              loading:""
+            })
+        })      
+      }
+    })
   },
   bindDateChange(event)
   {
       console.log(event.detail.value)
       this.setData({
-        date:event.detail.value
+        'form.graduationtime':event.detail.value
       }
       )
   },
@@ -38,10 +131,6 @@ Page({
 
   }
   ,
-  submitForm()
-  {
-    validate
-  },
   onLoad(options) {
  
   },

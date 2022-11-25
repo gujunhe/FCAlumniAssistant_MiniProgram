@@ -1,1 +1,5 @@
 /* pages/meetup/meetup.wxss */
+.meetup{
+margin-left: 25rpx;
+margin-right: 25rpx;
+}

@@ -4,7 +4,7 @@
     <image src="{{item.images[0]}}" bindtap="getConcreteInfo"></image>
   </view >
   <view class="info" bindtap="getConcreteInfo">
-    <text>{{item.name}}</text>
+    <text>{{item.name}}</text>   
     <text>地址：{{item.address}}</text>
     <text>电话：{{item.phone}}</text>
     <!-- 后端确定进度条数值 -->
