@@ -2,6 +2,7 @@
   "dependencies": {
     "@vant/weapp": "^1.10.6",
     "lin-ui": "^0.9.12",
+    "miniprogram-barrage": "^1.1.1",
     "mobx-miniprogram": "^4.13.2"
   }
 }

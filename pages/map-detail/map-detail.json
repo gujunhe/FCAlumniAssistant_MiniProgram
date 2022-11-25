@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "pano": "plugin://wxPano/pano",
+    "barrage": "miniprogram-barrage"
+  },
+  "navigationBarTitleText": "留言祝福",
+  "navigationBarBackgroundColor": "#FFFFFF",
+  "navigationBarTextStyle": "black"
+}

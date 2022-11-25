@@ -35,6 +35,7 @@ Page(filter.loginCheck({
   onLoad(options) {
       this.setData({
         avatarUrl:'cloud://prod-3g07ynlp121f9201.7072-prod-3g07ynlp121f9201-1314224843/小程序前台/avatar/'+getApp().globalData.userInfo.openid+'.jpg'
+        ,name:getApp().globalData.userInfo.name
       })  },
 
   /**

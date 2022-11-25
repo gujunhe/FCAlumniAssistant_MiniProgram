@@ -1,0 +1,5 @@
+<pano  panolist="{{panolist}}" entryid="{{entrypanoid}}" entryname="{{entrypanoname}}"  key="{{key}}" autoinit="{{false}}">
+  <barrage class="barrage" ></barrage>
+<cover-view class="cover-view">
+<button 	  type="primary" style="width: 200rpx;">留言祝福</button></cover-view>
+</pano>
