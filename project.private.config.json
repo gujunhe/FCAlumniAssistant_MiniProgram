@@ -24,7 +24,25 @@
         },
         {
           "name": "",
+<<<<<<< Updated upstream
           "pathName": "pages/school-map/school-map",
+=======
+          "pathName": "pages/question/question",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/question/question",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/question/test",
+>>>>>>> Stashed changes
           "query": "",
           "launchMode": "default",
           "scene": null

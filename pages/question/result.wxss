@@ -1,0 +1,38 @@
+/* pages/question/result.wxss */
+/* pages/results/results.wxss */
+page {
+  background-color: #AFEEEE;
+}
+.page {
+  padding: 30rpx;
+}
+.mw-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.page-score {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-top:20rpx;
+}
+.score-num {
+  font-size:100rpx;
+}
+.page-footer {
+  margin-top:30rpx;
+  text-align: center;
+}
+.mw-title{
+  text-align: center;
+  font-size: 40rpx;
+  color: rgba(43, 12, 12, 0.596);
+  margin-top: 50rpx;
+}
+.mw-button{
+  text-align: center;
+  font-size: 40rpx;
+  margin-top: 50rpx;
+}

@@ -1,0 +1,4 @@
+/* pages/question/history.wxss */
+page{
+  background-color: #ffffff;
+}
