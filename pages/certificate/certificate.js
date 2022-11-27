@@ -99,7 +99,7 @@ Page({
               wx.showToast({
                 title: '认证成功',   
               })
-              wx.redirectTo({
+              wx.switchTab({
                 url: '/pages/home/home',
               })
             }

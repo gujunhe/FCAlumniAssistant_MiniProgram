@@ -1,7 +1,8 @@
 {
   "usingComponents": {
     "pano": "plugin://wxPano/pano",
-    "barrage": "miniprogram-barrage"
+    "barrage": "miniprogram-barrage",
+    "mp-dialog": "weui-miniprogram/dialog/dialog"
   },
   "navigationBarTitleText": "留言祝福",
   "navigationBarBackgroundColor": "#FFFFFF",

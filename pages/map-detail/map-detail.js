@@ -8,10 +8,115 @@ Page({
    */
   data: {
     placeid:'',
-    fileid:'https://www.aiotforest.com/pano2048-1024.jpg'
-
+    fileid:'',
+    flag:false,
+    index: 0,
+    array: [ ],
+    buttons: [{
+      text: '取消'
+    }, {
+      text: '确定'
+    }]
   },
+  buttontap(e){
+    const index=e.detail.index
+    if(index==0)
+    {
+      this.setData({
+        flag:false
+      })
+    }
+    else{
+      wx.showLoading({
+        title: '留言中',
+      })
+      wx.cloud.callContainer({
+        "config": {
+          "env": "prod-3g07ynlp121f9201"
+        },
+        "path": "/Weixin/addMessage",
+        "header": {
+          "X-WX-SERVICE": "springboot-fchz",
+          "content-type": "application/x-www-form-urlencoded"
+        },
+        "method": "POST",
+        "data": {
+          openid:getApp().globalData.userInfo.openid,
+          keyid:this.data.array[this.data.index].id,
+          id:this.data.placeid
+        }
+      }).then((response)=>{
+        console.log(response.data)
+        const data=response.content
+        if(response.data.success==true)
+        {
+          wx.hideLoading()
+          wx.showToast({
+            title: '留言成功',
+            icon: 'success',
+            duration: 2000
+          })
+          this.setData({
+            flag:false,
+          })
+          wx.cloud.callContainer({
+            "config": {
+              "env": "prod-3g07ynlp121f9201"
+            },
+            "path": "/Weixin/getMessage?id="+this.data.placeid,
+            "header": {
+              "X-WX-SERVICE": "springboot-fchz",
+              "content-type": "application/json"
+            },
+            "method": "POST",
+            "data": ""
+          }).then((response)=>{
+            console.log(response.data)
+            const data=response.content
+            if(response.data.success==true)
+            {
+              const data=response.data.content
+                //弹幕
+                this.addBarrage(data)
+              }
+          })
+        }
+        else if(response.data.success==false)
+        {
+          wx.hideLoading()
+          wx.showToast({
+            title: '请勿重复留言同一句',
+            icon: 'none',
+            duration: 2000
+          })
+        }
+        //请求后端数据失败
+        else{
+        
+          wx.hideLoading()
+          wx.showToast({
+            title: '服务器出现故障，获取数据失败',
+            icon: 'none',
+            duration: 2000
+          })
+        }
+      })
+    
 
+    }
+    
+  },
+  greetingtap(){
+      this.setData({
+        flag:true
+      })
+  },
+  bindPickerChange: function(e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      index: e.detail.value
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -58,6 +163,50 @@ Page({
         const data=response.data.content
           //弹幕
           this.addBarrage(data)
+        }
+      //请求后端数据失败
+      else{
+        console.log("获取数据失败")
+        wx.hideLoading()
+        wx.showToast({
+          title: '服务器出现故障，获取数据失败',
+          icon: 'none',
+          duration: 2000
+        })
+      }
+    })
+
+
+    wx.cloud.callContainer({
+      "config": {
+        "env": "prod-3g07ynlp121f9201"
+      },
+      "path": "/Weixin/greeting",
+      "header": {
+        "X-WX-SERVICE": "springboot-fchz",
+        "content-type": "application/json"
+      },
+      "method": "GET",
+      "data": ""
+    }).then((response)=>{
+      console.log(response.data)
+      const data=response.content
+      if(response.data.success==true)
+      {
+        const data=response.data.content
+        const array=[]
+
+        for(let i = 0; i <data.length; i++)
+        {
+          array.push({
+            id:data[i].keyid,
+            name:data[i].greeting
+          })
+        }
+
+        this.setData({
+            array:array
+        })
         }
       //请求后端数据失败
       else{
