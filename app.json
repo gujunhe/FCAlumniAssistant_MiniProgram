@@ -13,7 +13,8 @@
     "pages/alumnus-detail/alumnus-detail",
     "pages/description/description",
     "pages/certificate/certificate",
-    "pages/map-detail/map-detail"
+    "pages/map-detail/map-detail",
+    "pages/meetup-detail/meetup-detail"
   ],
   "window": {
     "backgroundTextStyle": "light",

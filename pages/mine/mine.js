@@ -4,7 +4,7 @@ Page(filter.loginCheck({
   
   onChooseAvatar(e) {
     const { avatarUrl } = e.detail 
-    console.log(e.detail)
+    console.log(e.detail.avatarUrl)
     this.setData({
       avatarUrl,
     })
@@ -21,6 +21,22 @@ Page(filter.loginCheck({
     })
 
     
+  },
+  myinfo(){
+
+  },
+  contactus(){
+    wx.showModal({
+      title: '开发人员联系方式',
+      content: '13625952254',
+      success (res) {
+        if (res.confirm) {
+          console.log('用户点击确定')
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
   },
   /**
    * 页面的初始数据

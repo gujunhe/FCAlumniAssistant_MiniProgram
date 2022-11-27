@@ -1,0 +1,5 @@
+
+<view wx:for="{{student}}" class="meetup">
+
+  <l-list icon-color="#F4516C"title="{{item.name}}" icon="user" tag-content="电话号：{{item.phonenumber}}" tagShape="circle" tag-position="right" bind:lintap="lintap" data-tel="{{item.phonenumber}}"/>
+</view>

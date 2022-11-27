@@ -8,7 +8,16 @@ Page(filter.loginCheck({
   data: {
     
   },
-
+  mydep(){
+      wx.navigateTo({
+        url: '/pages/meetup-detail/meetup-detail?flag=dep',
+      })
+  },
+  myclass(){
+    wx.navigateTo({
+      url: '/pages/meetup-detail/meetup-detail?flag=class',
+    }) 
+  },
   /**
    * 生命周期函数--监听页面加载
    */

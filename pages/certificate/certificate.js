@@ -106,7 +106,9 @@ Page({
             this.setData({
               loading:""
             })
-        })      
+        })    
+
+        
       }
     })
   },

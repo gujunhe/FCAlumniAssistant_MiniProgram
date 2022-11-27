@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "l-list":"/miniprogram_npm/lin-ui/list"},
+  "navigationBarTitleText": "我的校友",
+  "navigationBarBackgroundColor": "#FFFFFF",
+  "navigationBarTextStyle": "black"
+ 
+}
