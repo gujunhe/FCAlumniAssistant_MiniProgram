@@ -1,5 +1,6 @@
 // pages/school-map/school-map.js
-Page({
+const filter = require('../../utils/filter');
+Page(filter.loginCheck({
 
   /**
    * 页面的初始数据
@@ -140,4 +141,4 @@ Page({
   onShareAppMessage() {
 
   }
-})
+}))

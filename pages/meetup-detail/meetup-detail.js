@@ -47,7 +47,7 @@ Page({
           else{
             console.log("获取数据失败")
             wx.showToast({
-              title: '服务器出现故障，获取数据失败',
+              title: '好像目前没有已认证校友哟',
               icon: 'none',
               duration: 2000
             })
@@ -85,7 +85,7 @@ Page({
           else{
             console.log("获取数据失败")
             wx.showToast({
-              title: '服务器出现故障，获取数据失败',
+              title: '好像目前没有已认证校友哟',
               icon: 'none',
               duration: 2000
             })

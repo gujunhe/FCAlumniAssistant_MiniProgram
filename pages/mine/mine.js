@@ -23,7 +23,7 @@ Page(filter.loginCheck({
     
   },
   myinfo(){
-
+    
   },
   contactus(){
     wx.showModal({
