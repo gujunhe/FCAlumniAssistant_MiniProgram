@@ -5,9 +5,7 @@ const activityRecord = db.collection('activityRecord');
 */
 Page({
   data: {
-    totalScore: null,
-    wrong: 0,
-    zql: null,
+    totalScore: null
   },
 
   onLoad(options) {
@@ -28,9 +26,7 @@ Page({
       
       let { wrong, totalScore } = examResult;
       this.setData({
-        totalScore,
-        wrong,
-        zql: (20-wrong)/20*100
+        totalScore
       })
 
       wx.hideLoading();

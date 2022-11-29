@@ -22,7 +22,7 @@ Page({
   goToResult(event){
     const { id } = event.currentTarget.dataset;
     wx.navigateTo({
-      url: '../result/result?id=' + id
+      url: '/pages/question/result?id=' + id
     })
   },
 

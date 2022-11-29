@@ -1,5 +1,4 @@
 /* pages/question/history.wxss */
-
 @import "/pages/question/colorui.wxss";
 @import "/pages/question/icon.wxss";
 page{
