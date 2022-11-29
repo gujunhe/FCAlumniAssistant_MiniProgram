@@ -1,7 +1,8 @@
 /* pages/question/result.wxss */
-/* pages/results/results.wxss */
+@import "/pages/question/colorui.wxss";
+@import "/pages/question/icon.wxss";
 page {
-  background-color: #AFEEEE;
+  background-color: #f5e3e3;
 }
 .page {
   padding: 30rpx;
@@ -32,6 +33,11 @@ page {
   margin-top: 50rpx;
 }
 .mw-button{
+  text-align: center;
+  font-size: 40rpx;
+  margin-top: 50rpx;
+}
+.point{
   text-align: center;
   font-size: 40rpx;
   margin-top: 50rpx;

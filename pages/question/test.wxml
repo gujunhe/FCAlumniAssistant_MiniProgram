@@ -1,11 +1,14 @@
 <!--pages/question/test.wxml-->
-<view class ="tip">第{{current}}题</view>
-<progress class="pro" percent="{{percent}}" color="#10AEFF" active stroke-width="10" border-radius='20'/>
+<view class ="tip">第{{CurrentNum}}题/共{{pool}}题</view>
+
 <view class ="Q">{{subject.title}}</view>
+
 <radio-group bindchange="radioChange">
 <view wx:for="{{subject.options}}" class = "item">
-    <radio value="{{item.code}}" checked="{{isSelect}}"/>
-    <text>{{item.code}}:{{item.option}}</text>
+    <radio value="{{item.code}}" checked="{{bool}}"/>
+    <text>{{item.code}}:  {{item.option}}</text>
   </view>
 </radio-group>
-<button class='cu-btn bg-red round block lg margin-top' bindtap="submit">下一题</button>
+<view class='page_ft flex padding flex-direction'>
+    <button bindtap="submit" class="cu-btn bg-red round lg" >下一题</button>
+  </view>

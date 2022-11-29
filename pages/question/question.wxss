@@ -10,6 +10,7 @@
   padding: 200rpx 0;
   box-sizing: border-box;
 }
+/*
 .mw-weixin.text-center {
     color: rgb(238, 238, 238);
     padding: 30rpx 0 0;
@@ -24,9 +25,9 @@
 .line-red::after, .lines-red::after {
   border-color: #FEAE82;
 }
-
+*/
 page{
-  background-color: #AFEEEE;
+  background-color: #f5e3e3;
 }
 .mw-bg {
   position: absolute;
@@ -56,7 +57,7 @@ page{
   margin-top: 100rpx;
 }
 .mw-content1{
-  margin-top: 200rpx;
+  margin-top: 150rpx;
   margin-left: 70rpx;
   text-align: left;
   font-size: 50rpx;
@@ -64,23 +65,8 @@ page{
 }
 .mw-content2{
   margin-right: 50rpx;
-  margin-top: 20rpx;
+  margin-top: 80rpx;
   text-align: right;
   font-size: 50rpx;
   color: rgb(212, 26, 26);
-}
-.aba{
-  background-color:#b3b3b3;
-  width: 80px;
-  height: 45px;
-  color: rgb(0, 0, 0);
-  font-size: 30px;
-  margin-left: 120px;
-}
-.aba:hover{
-  box-shadow: 2px 2px 15px 2px rgb(190, 225, 255);
-  background-color: transparent;
-  color: rgb(165, 165, 165);
-  /* 选择动画 */
-  animation: login_mation 0.5s;
 }

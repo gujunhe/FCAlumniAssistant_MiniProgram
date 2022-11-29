@@ -1,59 +1,48 @@
 /* pages/question/test.wxss */
+
 page{
-  background-color: 	#AFEEEE;
+  background-color:#f5e3e3;
 }
+
 .Q{
-  margin-top:20rpx;
+  margin-top:50rpx;
   text-align:center;
-  margin: 15rpx;
   font-size:40rpx;
+  font-weight: 900;
 }
 .tip{
   text-align:center;
   color:slategrey;
-  margin: 15rpx;
+  margin-top: 50rpx;
   font-size:40rpx; 
 }
+radio .wx-radio-input, checkbox .wx-checkbox-input {
+  margin: 10px;
+  width: 30px;
+  height: 30px;
+}
+radio-group {
+  display: inline-block;
+}
 .item{
-  margin: 80rpx ;
+  font-size:40rpx;
+  text-align:left;
+  margin:20rpx;
+  margin-left: 60rpx;
 }
-.pro{
-  margin: 20rpx;
+.progress{
+  margin:30rpx 85rpx 30rpx;
 }
-
-@import "/pages/question/colorui.wxss";
-@import "/pages/question/icon.wxss";
-
-.mw-weixin.text-center {
-    color: rgb(238, 238, 238);
-    padding: 30rpx 0 0;
+button::after{ 
+	border: none; 
 }
-.bg-red {
-  background-color: #FEAE82;
-  color: #851000;
-}
-.text-red, .line-red, .lines-red {
-  color: #FEAE82;
-}
-.line-red::after, .lines-red::after {
-  border-color: #FEAE82;
+button {
+    margin-top: 20px;
+    border-radius: 30px;
+    background: #eb2a2a; 
+    width: 230px;
+    color: white;
+    padding: 0rpx 100rpx;
+    font-size: 40rpx;
 }
 
-page{
-  background-color: #AFEEEE;
-}
-
-.mw-btn {
-  position: absolute;
-  top: 53vh;
-  left: 0;
-  width: 750rpx;
-  z-index: 2;
-}
-.mw-answer {
-  padding: 100rpx 150rpx 30rpx;
-}
-.mw-weixin.text-center {
-  color: #333;
-  padding: 30rpx 0 0;
-}
