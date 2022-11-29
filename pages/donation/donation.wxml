@@ -8,6 +8,6 @@
     <text>地址：{{item.address}}</text>
     <text>电话：{{item.phone}}</text>
     <!-- 后端确定进度条数值 -->
-    <l-progress percent="50" show-info="{{true}}" text-color='black' text-position="right" active-color="#49b877" background-color="#BEBEBE" > </l-progress>
+
   </view>
 </view>
