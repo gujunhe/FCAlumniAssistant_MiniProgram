@@ -15,3 +15,8 @@
   position: absolute;
   box-sizing: border-box;
 }
+.greeting-view{
+  position: absolute;
+  top: calc(50% + 150rpx);
+  left: calc(50% - 150rpx);
+}

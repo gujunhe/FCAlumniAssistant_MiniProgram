@@ -1,0 +1,6 @@
+{
+  "usingComponents": {"l-list":"/miniprogram_npm/lin-ui/list"},
+  "navigationBarTitleText": "个人信息",
+  "navigationBarBackgroundColor": "#FFFFFF",
+  "navigationBarTextStyle": "black"
+}

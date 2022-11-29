@@ -8,10 +8,7 @@ open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar"
 <input type="nickname" class="weui-input" placeholder="{{name}}"/>
 </view>
 <view class="userinfo-detail">
-<l-list title="个人信息"  />
-<l-list title="我的校友"  />
-<l-list title="意见反馈"  />
-<l-list title="关于我们"  />
+<l-list bind:lintap="myinfo"  title="个人信息"  />
+<l-list bind:lintap="contactus" title="联系我们"  />
 </view>
-
 </view>

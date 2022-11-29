@@ -13,7 +13,10 @@
     "pages/alumnus-detail/alumnus-detail",
     "pages/description/description",
     "pages/certificate/certificate",
-    "pages/map-detail/map-detail"
+    "pages/map-detail/map-detail",
+    "pages/meetup-detail/meetup-detail",
+    "pages/myinfo/myinfo",
+    "pages/online/online"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -32,7 +35,7 @@
         "selectedIconPath": "/images/tabBar/home-s.png"
       },
       {
-        "text": "云聚会",
+        "text": "班级聚会",
         "pagePath": "pages/meetup/meetup",
         "iconPath": "/images/tabBar/meetup.png",
         "selectedIconPath": "/images/tabBar/meetup-s.png"
@@ -63,5 +66,9 @@
     "scope.userLocation": {
       "desc": "你的位置信息将用于小程序定位"
     }
-  }
+  },
+  "requiredPrivateInfos":[
+    "onLocationChange",
+    "startLocationUpdate"
+  ]
 }

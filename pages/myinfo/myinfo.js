@@ -1,42 +1,17 @@
-// pages/meetup/meetup.js
-const filter = require('../../utils/filter');
-Page(filter.loginCheck({
+// pages/myinfo/myinfo.js
+Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    
+
   },
-  online(){
-    wx.navigateTo({
-      url: '/pages/online/online',
-    })
-  },
-  mydep(){
-      wx.navigateTo({
-        url: '/pages/meetup-detail/meetup-detail?flag=dep',
-      })
-  },
-  myclass(){
-    wx.navigateTo({
-      url: '/pages/meetup-detail/meetup-detail?flag=class',
-    }) 
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    // wx.getLocation({
-    //   type: 'wgs84',
-    //   success (res) {
-    //     const latitude = res.latitude
-    //     const longitude = res.longitude
-    //     const speed = res.speed
-    //     const accuracy = res.accuracy
-    //     console.log(latitude)
-    //   }
-    //  })
 
   },
 
@@ -88,4 +63,4 @@ Page(filter.loginCheck({
   onShareAppMessage() {
 
   }
-}))
+})
