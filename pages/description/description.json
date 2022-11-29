@@ -1,9 +1,5 @@
 {
-  "usingComponents": {
-    "l-progress":"/miniprogram_npm/lin-ui/progress",
-    "l-button":"/miniprogram_npm/lin-ui/button"
-
-  },
+  "usingComponents": {},
   "navigationBarTextStyle": "black",
   "navigationBarBackgroundColor": "#ffffff",
   "navigationBarTitleText": "捐款详情"
