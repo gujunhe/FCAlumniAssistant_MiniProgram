@@ -5,14 +5,86 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    query : {},
+    pageContent : [],
+    donateNum : 0
   },
-
+  donateMoney(){
+    const dialog1 = this.selectComponent('#inputNum')
+    dialog1.linShow({
+      title : '您正在捐献积分',
+      type : 'confirm',
+      "show-title" : false,
+      "locked" : false
+    })
+  },
+  confirmDonation(){
+    const toast1 = this.selectComponent('#messageImply')
+    wx.cloud.callContainer({
+      "config": {
+        "env": "prod-3g07ynlp121f9201"
+      },
+      "path": "/donation/donate",
+      "header": {
+        "X-WX-SERVICE": "springboot-fchz",
+        "content-type": "application/json"
+      },
+      "method": "GET",
+      data: {
+        openid : this.openid,
+        id : this.data.query.id,
+        push_Money : this.data.donateNum
+      },
+      success : (res) => {
+        console.log(res)
+        console.log('用户'+this.openid+'尝试为'+this.data.query.id+'号项目捐赠'+this.data.donateNum+'积分')
+        toast1.linShow({
+          duration : 2000,
+          title: res.data.message,
+          "icon" : (res.data.success==true ? "success":"error")
+        })
+      }
+    })
+  },
+  updateValue(e){
+    this.setData({
+      donateNum : e.detail.value,
+      success : () => {
+        console.log(this.data.donateNum)
+      }
+    })
+  },
+  getConcreteInfo () {
+    wx.cloud.callContainer({
+      "config": {
+        "env": "prod-3g07ynlp121f9201"
+      },
+      "path": "/donation/object",
+      "header": {
+        "X-WX-SERVICE": "springboot-fchz",
+        "content-type": "application/json"
+      },
+      "method": "GET",
+      data: {
+        openid : this.openid,
+        donate_id : this.data.query.id
+      },
+      success: (res) => {
+        this.setData({
+          pageContent : res.data.content
+        })
+        console.log(res)
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    this.setData({
+      query : options
+    })
+    this.getConcreteInfo()
   },
 
   /**
@@ -26,7 +98,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
   },
 
   /**

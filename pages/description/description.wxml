@@ -1,4 +1,5 @@
 <!--description/description.wxml-->
+<<<<<<< Updated upstream
 <view class="info1">
 <text>贫困女孩悉心照料瘫痪母亲</text>
 </view>
@@ -23,3 +24,31 @@
 </view>
 <l-button l-class="button" type="error" shape="semicircle" width="600">捐款</l-button>
 
+=======
+<!-- 无标题提示框 -->
+<l-toast show="{{false}}" id="messageImply"></l-toast>
+<l-dialog id="inputNum"
+  show="{{false}}"
+  show-title="{{false}}"
+ locked="{{false}}" bind:linconfirm="confirmDonation">
+  <l-input placeholder="请输入捐献数量" hide-label="{{true}}" type="number" showRow="{{false}}" bind:lininput="updateValue"/>
+</l-dialog>
+
+<view class="info1"> 
+<text>{{pageContent.data.name}}</text> 
+</view> 
+<image src="{{pageContent.data.picture}}" mode="aspectFill" class="image1"></image> 
+<view class="info3"> 
+  <text>图片展示</text> 
+</view> 
+<view  class="info2"> 
+  <text user-select="true">{{pageContent.data.introduction}}</text> 
+</view> 
+<view class="container1"> 
+  <view class="info4">您已献出的爱心积分：{{pageContent.ever_push}}</view> 
+  <view class="info4">总计需要积分：{{pageContent.data.need}}</view> 
+  <view class="info4">当前进度：{{pageContent.data.prog * 100}}%</view> 
+  <l-progress percent="{{pageContent.data.prog * 100}}" show-info="{{true}}" text-color='black' text-position="right" active-color="#e07083" background-color="#BEBEBE" stroke-width="15" l-class="progress"> </l-progress> 
+</view> 
+<l-button l-class="button" type="error" shape="circle" width="250" bindtap="donateMoney" size="large">捐款</l-button> 
+>>>>>>> Stashed changes

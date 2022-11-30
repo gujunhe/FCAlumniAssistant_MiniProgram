@@ -1,4 +1,5 @@
 /* description/description.wxss */
+<<<<<<< Updated upstream
 .image1{
   margin-top: 10rpx;
   width: 98%;
@@ -58,4 +59,71 @@
 .progress{
   margin-left: 10%;
   width: 80%;
+=======
+.image1{ 
+  margin-top: 10rpx; 
+  width: 98%; 
+  height: 450rpx; 
+  margin-left: 8rpx; 
+  box-shadow: 1rpx 1rpx 5rpx #5c5a5a; 
+} 
+.info1{ 
+  margin-bottom: 10rpx; 
+  font-size: large; 
+  font-weight: 700; 
+  text-align: center; 
+ 
+} 
+.info2{ 
+  /*段落排版--行间距（行高）*/
+  line-height: 1.5em;
+  /*段落排版--中文字间距*/
+  letter-spacing: 1px;
+  /*字母间距*/
+  word-spacing: 4px;
+  font-weight: 200;
+  /* line-height: 55rpx;  */
+  white-space: pre-wrap; 
+  border-radius: 30rpx; 
+  margin-top: 10rpx; 
+  margin-left: 10rpx; 
+  margin-right: 10rpx; 
+  padding-left: 20rpx; 
+  padding-right: 20rpx; 
+  padding-top: 30rpx; 
+  padding-bottom: 20rpx; 
+  border: 4rpx #d1caca solid; 
+  text-align: left; 
+} 
+.info3{ 
+  color:#5c5a5a; 
+  font-size:xx-small; 
+  text-align: center; 
+  margin-top: -7px; 
+} 
+.info4{ 
+  padding-top: 20rpx; 
+  text-align: center; 
+} 
+.container1{ 
+  margin-top: 20rpx; 
+  font-size: small; 
+  width: 75%; 
+  margin-left: 12.5%; 
+  border-radius: 30rpx; 
+  background-color: #baf4fc; 
+} 
+.l-class{ 
+  width: 100rpx !important; 
+} 
+.button{ 
+  color:#ffffff !important; 
+  margin-left: 32.5%; 
+  margin-top: 40rpx; 
+  margin-bottom: 20rpx; 
+} 
+.progress{ 
+  margin-left: 10%; 
+  width: 80%; 
+>>>>>>> Stashed changes
 }
