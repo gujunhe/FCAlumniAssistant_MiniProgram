@@ -10,6 +10,14 @@ Page({
     donateNum : 0
   },
   donateMoney(){
+    const toast2 = this.selectComponent('#finishDonate')
+    if(this.data.pageContent.had >= this.data.pageContent.need) {
+      toast2.linShow({
+        duration : 2000,
+        title : "该项目已捐献完毕，感谢支持！"
+      })
+      return
+    }
     const dialog1 = this.selectComponent('#inputNum')
     dialog1.linShow({
       title : '您正在捐献积分',

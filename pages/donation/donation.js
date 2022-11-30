@@ -7,6 +7,7 @@ Page({
   data: {
     isloading : false,
     donateList : [],
+    progList : [],
     page : 1,
     pageSize : 6,
     total: 0,
@@ -32,6 +33,7 @@ Page({
       success: (res) => {
         this.setData({
           donateList : [...this.data.donateList, ...res.data.content.data],
+          progList : [...this.data.progList, ...res.data.content.prog],
           total : res.data.content.total,
         })
         console.log(res)
@@ -49,6 +51,7 @@ Page({
       name : e.detail.value,
       page : 1,
       donateList : [],
+      progList : [],
       total : 0
     })
     this.cloudRequest()
@@ -111,6 +114,7 @@ Page({
     this.setData({
       page : 1,
       donateList : [],
+      progList : [],
       total : 0
     })
     // 重新发起请求

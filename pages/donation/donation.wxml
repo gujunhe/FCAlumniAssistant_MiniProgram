@@ -7,11 +7,6 @@
   <view class="info" >
     <text class="title" >{{item.name}}</text>   
     <text>当前进度：</text>
-    <!-- 后端确定进度条数值 -->
-<<<<<<< Updated upstream
-
-=======
-    <l-progress percent="{{item.prog * 100}}" show-info="{{true}}" text-color='black' text-position="right" active-color="#49b877" background-color="#BEBEBE" l-class="progress"> </l-progress>
->>>>>>> Stashed changes
+    <l-progress percent="{{progList[item.id-1] * 100}}" show-info="{{true}}" text-color='black' text-position="right" active-color="#49b877" background-color="#BEBEBE" l-class="progress"> </l-progress>
   </view>
 </navigator>
