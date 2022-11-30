@@ -1,11 +1,14 @@
 {
   "usingComponents": {
-    "l-progress":"/miniprogram_npm/lin-ui/progress" 
+    "l-progress":"/miniprogram_npm/lin-ui/progress" ,
+    "l-search-bar":"/miniprogram_npm/lin-ui/search-bar" 
 
   },
   "enablePullDownRefresh": true,
   "onReachBottomDistance": 50,
   "navigationBarTitleText": "校友捐款",
   "navigationBarBackgroundColor": "#FFFFFF",
-  "navigationBarTextStyle": "black"
+  "navigationBarTextStyle": "black",
+  "backgroundColor": "#efefef",
+ "backgroundTextStyle": "dark"
 }

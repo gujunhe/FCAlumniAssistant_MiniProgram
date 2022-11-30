@@ -1,25 +1,29 @@
 <!--description/description.wxml-->
-<view class="info1">
-<text>贫困女孩悉心照料瘫痪母亲</text>
-</view>
-<image src="/images/贫困学生.jpg" mode="aspectFill" class="image1"></image>
-<view class="info3">
-  <text>王宁正在家里洗菜给母亲做饭</text>
-</view>
-<view  class="info2">
-  <text user-select="true">    王宁，是出生在大山里的孩子。王宁的父亲母亲都是农民，家里凭借着分下的两亩地过活。王宁小的时候就酷爱读书，在村里的学校里，她一直都是第一名。
-    陶艳波，48岁，女。
-    48岁的陶艳波，每天从早到晚，几乎都要陪伴在儿子杨乃彬身边，和儿子一起学习，做儿子的老师、陪读。
-    在杨乃彬一岁的时候，因为一次发烧导致耳膜出血，最终导致他失去了听说功能。这给了陶艳波和一家人很大的打击。
-    为了给孩子治病，他们走过了很多地方，但医生的结论始终让他们失望。很多人劝陶艳波把孩子送到聋哑学校，但是陶艳波没有放弃。为了儿子，她专门从老家黑龙江到北京去学习唇语，然后一点点地教儿子说话、识字。
-    陶艳波坚持让儿子上正常学校，为此她做出了一个难以让人理解的决定：辞职陪着孩子一起上学。就这样，从小学一年级到高三，母子二人一起学习。陶艳波就是儿子的耳朵，就是儿子的向导。杨乃彬的老师、同学也都为这对母子提供了最好的条件。经过不断练习，杨乃彬也能比较正常地和人交流。
-    如今，杨乃彬已经考上了大学，成为了河北工业大学机电专业的学生。他希望用自己的努力回报父母，回报老师，回报所有帮助他们的人。</text>
-</view>
-<view class="container1">
-  <view class="info4">您已献出的爱心积分：0</view>
-  <view class="info4">总计需要积分：2000</view>
-  <view class="info4">目前进度：</view>
-  <l-progress percent="50" show-info="{{true}}" text-color='black' text-position="right" active-color="#49b877" background-color="#BEBEBE" stroke-width="15" l-class="progress"> </l-progress>
-</view>
-<l-button l-class="button" type="error" shape="semicircle" width="600">捐款</l-button>
-
+<l-toast id="finishDonate"
+  show="{{false}}"
+  title="这是一条基础提示框"
+/>
+<l-toast show="{{false}}" id="messageImply"></l-toast>
+<l-dialog id="inputNum"
+  show="{{false}}"
+  show-title="{{false}}"
+ locked="{{false}}" bind:linconfirm="confirmDonation">
+  <l-input placeholder="请输入捐献数量" hide-label="{{true}}" type="number" showRow="{{false}}" bind:lininput="updateValue"/>
+</l-dialog>
+<view class="info1"> 
+<text>{{pageContent.data.name}}</text> 
+</view> 
+<image src="{{pageContent.data.picture}}" mode="aspectFill" class="image1"></image> 
+<view class="info3"> 
+  <text>图片展示</text> 
+</view> 
+<view  class="info2"> 
+  <text user-select="true">{{pageContent.data.introduction}}</text> 
+</view> 
+<view class="container1"> 
+  <view class="info4">您已献出的爱心积分：{{pageContent.ever_push}}</view> 
+  <view class="info4">总计需要积分：{{pageContent.data.need}}</view> 
+  <view class="info4">当前进度：{{pageContent.prog[0] * 100}}%</view> 
+  <l-progress percent="{{pageContent.prog[0] * 100}}" show-info="{{true}}" text-color='black' text-position="right" active-color="#e07083" background-color="#BEBEBE" stroke-width="15" l-class="progress"> </l-progress> 
+</view> 
+<l-button l-class="button" type="error" shape="circle" width="250" bindtap="donateMoney" size="large">捐款</l-button> 

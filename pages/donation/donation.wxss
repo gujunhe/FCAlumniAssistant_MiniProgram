@@ -1,17 +1,18 @@
 /* pages/donation/donation.wxss */
 .total{
+  height: 200rpx;
   display: flex;
   padding: 15rpx;
   margin: 15rpx;
   border-radius: 8rpx;
   border: 1rpx #ffffff;
-  box-shadow: 1rpx 1rpx 15rpx rgb(156, 155, 155);
+  box-shadow: 1rpx 1rpx 10rpx rgb(156, 155, 155);
 }
 .picture image{
-  width: 180rpx;
-  height: 180rpx;
+  width: 200rpx;
+  height: 200rpx;
   display: block;
-  margin-right: 15rpx;
+  margin-right: 30rpx;
 }
 .info{
   display: flex;
@@ -21,5 +22,16 @@
   margin: 4rpx;
 }
 .progress{
-  margin: 10rpx
+  margin: 5rpx;
+  width: 450rpx;
+}
+.title{
+  margin-bottom: 50rpx;
+  height: 50rpx;
+  font-size: medium;
+  overflow: hidden;
+}
+.searchbar{
+  margin-top: 20rpx;
+  margin-bottom: 25rpx;
 }

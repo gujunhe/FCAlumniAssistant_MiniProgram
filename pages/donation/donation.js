@@ -7,34 +7,34 @@ Page({
   data: {
     isloading : false,
     donateList : [],
+    progList : [],
     page : 1,
-    pageSize : 10,
-    total: 0
+    pageSize : 6,
+    total: 0,
+    name : '',
+    query : {}
   },
-  getConcreteInfo(){
-    wx.redirectTo({
-      url: '/pages/description/description?id=this.data.',
-    })
-    console.log('test now!')
-  },
-  getDonateList(cb){
-    this.setData({
-      isloading : true
-    })
-    wx.showLoading({
-      title: 'loading'
-    })
-    wx.request({
-      url: 'https://www.escook.cn/categories/1/shops',
-      method : 'GET',
-      data : {
-        _page : this.data.page,
-        _limit : this.data.pageSize
+  cloudRequest(){
+    wx.cloud.callContainer({
+      config: {
+        env: "prod-3g07ynlp121f9201"
       },
-      success : (res) =>{
+      path: "/donation/fresh",
+      header: {
+        "X-WX-SERVICE": "springboot-fchz",
+        "content-type": "application/json"
+      },
+      "method": "GET",
+     data: {
+       pageNum : this.data.page,
+       pageSize : this.data.pageSize,
+       name : this.data.name
+     },
+      success: (res) => {
         this.setData({
-          donateList : [...this.data.donateList, ...res.data],
-          total : res.header['X-Total-Count'] - 0,
+          donateList : [...this.data.donateList, ...res.data.content.data],
+          progList : [...this.data.progList, ...res.data.content.prog],
+          total : res.data.content.total,
         })
         console.log(res)
       },
@@ -43,15 +43,36 @@ Page({
         this.setData({
           isloading : false
         })
-        cb && cb()
       }
     })
+  },
+  resetPage(e){
+    this.setData({
+      name : e.detail.value,
+      page : 1,
+      donateList : [],
+      progList : [],
+      total : 0
+    })
+    this.cloudRequest()
+  },
+  getDonateList(){
+    this.setData({
+      isloading : true
+    })
+    wx.showLoading({
+      title: 'loading'
+    })
+    this.cloudRequest()
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
+    this.setData({
+      query : options
+    })
     this.getDonateList()
   },
 
@@ -79,6 +100,9 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload() {
+    this.setData({
+      name : ''
+    })
     this.getDonateList()
   },
 
@@ -89,14 +113,13 @@ Page({
     // 重置关键数据
     this.setData({
       page : 1,
-      shopList : [],
+      donateList : [],
+      progList : [],
       total : 0
     })
     // 重新发起请求
-    // 若有回调则自动调用
-    this.getDonateList(() => {
-      wx.stopPullDownRefresh()
-    })
+    this.cloudRequest()
+    wx.stopPullDownRefresh()
   },
 
   /**

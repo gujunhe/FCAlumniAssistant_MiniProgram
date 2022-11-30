@@ -1,13 +1,12 @@
 <!--pages/donation/donation.wxml-->
-<view class="total" wx:for="{{donateList}}" wx:key="id" bindtap="getConcreteInfo">
-  <view class="picture">
-    <image src="{{item.images[0]}}" bindtap="getConcreteInfo"></image>
+<l-search-bar placeholder="请输入想要搜索的内容" shape="circle" l-container-class="searchbar" front-text="福州大学" show-cancel="{{false}}" bind:linblur="resetPage" auto-focus="{{true}}"></l-search-bar>
+<navigator class="total" wx:for="{{donateList}}" wx:key="id" url="/pages/description/description?id={{item.id}}">
+<view class="picture">
+    <image src="{{item.picture}}" ></image>
   </view >
-  <view class="info" bindtap="getConcreteInfo">
-    <text>{{item.name}}</text>   
-    <text>地址：{{item.address}}</text>
-    <text>电话：{{item.phone}}</text>
-    <!-- 后端确定进度条数值 -->
-
+  <view class="info" >
+    <text class="title" >{{item.name}}</text>   
+    <text>当前进度：</text>
+    <l-progress percent="{{progList[item.id-1] * 100}}" show-info="{{true}}" text-color='black' text-position="right" active-color="#49b877" background-color="#BEBEBE" l-class="progress"> </l-progress>
   </view>
-</view>
+</navigator>
