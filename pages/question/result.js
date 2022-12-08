@@ -3,6 +3,20 @@ const app = getApp();
 const db = wx.cloud.database();
 const activityRecord = db.collection('activityRecord');
 */
+//保存答题记录
+wx.cloud.callContainer({
+  "config": {
+    "env": "prod-3g07ynlp121f9201"
+  },
+  "path": "/Weixin/insertNewRecord?openId?score",
+  "header": {
+    "X-WX-SERVICE": "springboot-fchz",
+    "content-type": "application/json"
+  },
+  "method": "POST",
+  "data": ""
+})
+
 Page({
   data: {
     totalScore: null

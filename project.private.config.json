@@ -7,15 +7,31 @@
     "miniprogram": {
       "list": [
         {
+<<<<<<< Updated upstream
           "name": "pages/donation/donation",
           "pathName": "pages/home/home",
+=======
+          "name": "",
+          "pathName": "pages/question/question",
           "query": "",
           "launchMode": "default",
           "scene": null
         },
         {
           "name": "",
+          "pathName": "pages/question/test",
+>>>>>>> Stashed changes
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+<<<<<<< Updated upstream
           "pathName": "pages/donation/donation",
+=======
+          "pathName": "pages/question/result",
+>>>>>>> Stashed changes
           "query": "",
           "launchMode": "default",
           "scene": null

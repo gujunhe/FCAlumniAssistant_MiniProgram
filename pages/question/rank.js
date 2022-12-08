@@ -9,6 +9,19 @@ const activityScore = db.collection('activityScore');
 // 数据库操作符
 const _ = db.command;
 */
+//获取答题排行榜
+wx.cloud.callContainer({
+  "config": {
+    "env": "prod-3g07ynlp121f9201"
+  },
+  "path": "Weixin/getListOfAnswer",
+  "header": {
+    "X-WX-SERVICE": "springboot-fchz",
+    "content-type": "application/json"
+  },
+  "method": "GET",
+  "data": ""
+})
 Page({
   data: {
     rankList: []
