@@ -1,10 +1,16 @@
 {
   "usingComponents": {
+<<<<<<< Updated upstream
     "l-button": "/miniprogram_npm/lin-ui/button" ,
     "l-progress": "/miniprogram_npm/lin-ui/progress" ,
     "l-dialog": "/miniprogram_npm/lin-ui/dialog",
     "l-input": "/miniprogram_npm/lin-ui/input",
     "l-toast": "/miniprogram_npm/lin-ui/toast"
+=======
+    "l-progress":"/miniprogram_npm/lin-ui/progress",
+    "l-button":"/miniprogram_npm/lin-ui/button"
+
+>>>>>>> Stashed changes
   },
   "navigationBarTextStyle": "black",
   "navigationBarBackgroundColor": "#ffffff",

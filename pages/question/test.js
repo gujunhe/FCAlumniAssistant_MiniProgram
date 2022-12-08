@@ -32,6 +32,20 @@ const q= [{
     option: '丁香园'
   }]
 }]
+//获取题目
+wx.cloud.callContainer({
+  "config": {
+    "env": "prod-3g07ynlp121f9201"
+  },
+  "path": "Weixin/getQuestion?num=20",
+  "header": {
+    "X-WX-SERVICE": "springboot-fchz",
+    "content-type": "application/json"
+  },
+  "method": "GET",
+  "data": ""
+})
+
 Page({
   data: {
     pool:0 ,//总题数
