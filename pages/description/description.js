@@ -39,11 +39,13 @@ Page({
       },
       "method": "GET",
       data: {
-        openid : this.openid,
+        openid : getApp().globalData.userInfo.openid,
+        push_Money : this.data.donateNum,
         id : this.data.query.id,
-        push_Money : this.data.donateNum
+        
       },
       success : (res) => {
+        this.getConcreteInfo()
         console.log(res)
         console.log('用户'+this.openid+'尝试为'+this.data.query.id+'号项目捐赠'+this.data.donateNum+'积分')
         toast1.linShow({
@@ -51,6 +53,7 @@ Page({
           title: res.data.message,
           "icon" : (res.data.success==true ? "success":"error")
         })
+
       }
     })
   },
@@ -74,7 +77,7 @@ Page({
       },
       "method": "GET",
       data: {
-        openid : this.openid,
+        openid : getApp().globalData.userInfo.openid,
         donate_id : this.data.query.id
       },
       success: (res) => {

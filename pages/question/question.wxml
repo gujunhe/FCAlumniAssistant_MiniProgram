@@ -1,20 +1,19 @@
 <!--pages/question/question.wxml-->
+<view>当前积分：{{money}}</view>
 <view class="mw-title">欢迎进入答题功能</view>
 <view class="mw-content1">离开福大多年的同学们，</view>
 <view class="mw-content2">对母校是否还记忆犹新呢？</view>
 <view class="mw-btn">
   <view class="mw-answer">
-    <view wx:if="{{!hasUserInfo}}" bindtap="login">
-      <button class='cu-btn bg-red round block lg margin-top'> 获取头像昵称 </button>
-    </view>
-    <view wx:else bindtap="goToTest">
+
+    <view  bindtap="goToTest">
       <button class='cu-btn bg-red round block lg margin-top'>开始答题</button>
     </view>
     <view bindtap="goToHistory">
       <button class='cu-btn bg-red round block lg margin-top'>历史记录</button>
     </view>
     <view bindtap="goToRank">
-      <button class='cu-btn bg-red round block lg margin-top'>排行榜</button>
+      <button class='cu-btn bg-red round block lg margin-top'>排行榜(历史总积分)</button>
     </view>
     <view>
       <button class="cu-btn line-red round block lg margin-top" open-type="share"> 推荐给好友 </button>

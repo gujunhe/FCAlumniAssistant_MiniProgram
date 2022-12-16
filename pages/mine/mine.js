@@ -18,9 +18,7 @@ Page(filter.loginCheck({
       console.log(res.fileID)
     }).catch(error => {
       console.error(error)
-    })
-
-    
+    }) 
   },
   myinfo(){
     

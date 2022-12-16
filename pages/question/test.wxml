@@ -1,14 +1,22 @@
 <!--pages/question/test.wxml-->
-<view class ="tip">第{{CurrentNum}}题/共{{pool}}题</view>
+<view class ="tip">第{{idx+1}}题/共{{pool}}题</view>
 
-<view class ="Q">{{subject.title}}</view>
+<view class ="Q">{{list[idx].title}}</view>
 
 <radio-group bindchange="radioChange">
-<view wx:for="{{subject.options}}" class = "item">
-    <radio value="{{item.code}}" checked="{{bool}}"/>
+<view wx:for="{{list[idx].options}}" class = "item">
+<view wx:if="{{item.option}}">
+    <radio value="{{item.code}}" checked="{{list[idx].current==item.code}}"/>
     <text>{{item.code}}:  {{item.option}}</text>
   </view>
-</radio-group>
-<view class='page_ft flex padding flex-direction'>
-    <button bindtap="submit" class="cu-btn bg-red round lg" >下一题</button>
   </view>
+  
+</radio-group>
+<view class="select-sure">
+  <view wx:if='{{idx == 0}}' class="top-sure1">上一题</view>
+  <view wx:else class="top-sure" bindtap="jumpBackTitle">上一题</view>
+  <view wx:if='{{idx == list.length - 1}}' class="bottom-sure1">下一题</view>
+  <view wx:else class="bottom-sure" bindtap="jumpNavTitle">下一题</view>
+  </view>
+
+  <button wx:if='{{idx == list.length - 1}}' bindtap="submit" class="cu-btn bg-red round lg" >提交</button>

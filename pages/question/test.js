@@ -1,177 +1,141 @@
-const q= [{
-  title: '福州大学共有几个校区？',
-  answer: ['C'],
-  options: [{
-    code: 'A',
-    option: '3'
-  },{
-    code: 'B',
-    option: '4'
-  },{
-    code: 'C',
-    option: '5'
-  },{
-    code: 'D',
-    option: '6'
-  }]
-},
-{
-  title: '福州大学三区的食堂叫什么？',
-  answer: ['A'],
-  options: [{
-    code: 'A',
-    option: '玫瑰园'
-  },{
-    code: 'B',
-    option: '京园'
-  },{
-    code: 'C',
-    option: '朝阳'
-  },{
-    code: 'D',
-    option: '丁香园'
-  }]
-}]
-//获取题目
-wx.cloud.callContainer({
-  "config": {
-    "env": "prod-3g07ynlp121f9201"
-  },
-  "path": "Weixin/getQuestion?num=20",
-  "header": {
-    "X-WX-SERVICE": "springboot-fchz",
-    "content-type": "application/json"
-  },
-  "method": "GET",
-  "data": ""
-})
 
 Page({
   data: {
-    pool:0 ,//总题数
-    subject: {},//题目
-    userSelect:'',//用户选项
-    CurrentNum: 1,//题号
-    bool: false,//s是否选中
-    percent: 0,//进度
-    userScore: 0,//答对题数
+    list: [{
+      name: '1:  1 + 1 = ?',
+      select_title: ["A、1", "B、2", "C、3", "D、4"],
+      sure_title: 'C'
+      ,current:null
+    }, {
+      name: '2:  2 + 2 = ?',
+      select_title: ["A、4", "B、5", "C、6", "D、7"],
+      sure_title: 'C'
+      ,current:null
+    }],
+    idx: 0,//题目下标
+    num: 0,//分数
+    pool:5//题目总数
 },
 //单选
 radioChange(e){
     console.log(e.detail.value)
     this.setData({
-        userSelect: e.detail.value
+        
+      ['list['+this.data.idx+'].current']: e.detail.value
     })
 },
-
-    //提交答题
-    submit(){
-      console.log('用户选择 ',this.data.userSelect)
-      let num = this.data.CurrentNum
-      let userSelect= this.data.userSelect
-      //更新进度条
-      this.setData({
-          percent: ((num/q.length)*100),
-      })
-      //提醒用户做选择
-      if(!userSelect)
-      {
-          wx.showToast({
-              title: '请做选择',
-              icon: 'none',
-          })
-      }
-      //判断对错
-      console.log('正确答案',this.data.subject.answer)
-      if(this.data.subject.answer.indexOf(userSelect)>-1)
-      {
-          this.setData({
-              userScore: this.data.userScore + 1
-          })
-      }
-      console.log('用户共答对'+ this.data.userScore +"道题")
-
-      //最后一题hint+打分
-      if((num+1)>q.length)
-      {
-          let sum =this.data.userScore / q.length * 100//sum:总得分
-          console.log('用户总得分',sum)
-          this.setData({
-              sum: sum
-          })
-          wx.showToast({
-              title: '已经最后一题啦\n   正在生成结果~\n',
-              icon: 'none'
-          })
-          wx.redirectTo({
-            url: '../question/result'
-       })
-      }
-      let subject = q[num]
-      console.log('现在是第',num,'题')
-      console.log('下面是第',num+1,'题')
-      this.setData({
-          subject : subject,
-          userSelect:'',
-          CurrentNum : num + 1,
-          bool: false,
-          percent: (((num-1)/q.length)*100),
-      })
-  },
+jumpBackTitle(e){
+  var that = this
+  var idx = that.data.idx//第几题
+  var idz = that.data.idz//选择答案
+  console.log("k",idx)
+    this.setData({
+      idx: idx - 1,
+      idz: -1,//重置本题答案
+    })
+},
+jumpNavTitle(e){
+  var that = this
+  var idx = that.data.idx
+  var idz = that.data.idz
+  console.log("k",idx)
+    this.setData({
+      idx: idx + 1,
+      idz: -1,
+    })
+},
+selectTitle(e){
+  var index = e.currentTarget.dataset.index
+  var that = this
+  var idx = that.data.idx
+  
  
+  this.setData({
+
+    ['list['+that.data.idx+'].current']:index
+   
+  })
+  var current=that.data.list[idx].current
+  console.log(current)
+},
   //nextSubmit: function(){},
 
   onLoad(){
     console.log('executing onload')
-    let subject = q[0]
-    this.setData({
-        subject : subject,
-        pool: q.length,
-    })
-    }
-  /*
-  lastJudge(){
-    if (this.data.current < this.data.titles.length - 1) {
-      // 如果不是最后一题，则切换下一题
-      let current = this.data.current + 1;
-      this.setData({
-        current
-      })
-    } else {
-      // 如果是最后一题，则提交答卷
-      this.addExamRecord()
-    }
-  },
-    // 提交答卷
-    addExamRecord(){
-      let examResult = {
-        totalScore: this.userScore,
-        nickName: app.globalData.hasUserInfo?app.globalData.userInfo.nickName:'',
-        avatarUrl: app.globalData.hasUserInfo?app.globalData.userInfo.avatarUrl:''
-      };
-      this.setData({
-        userScore:''
-      })
-    
-      activityRecord.add({
-        data: {
-          ...examResult,
-          createDate: db.serverDate()
+
+    // 显示 loading 提示框
+    wx.showLoading({
+      title: '拼命加载中'
+    });
+    wx.cloud.callContainer({
+      "config": {
+        "env": "prod-3g07ynlp121f9201"
+      },
+      "path": "/Weixin/getQuestion?num=5",
+      "header": {
+        "X-WX-SERVICE": "springboot-fchz",
+        "content-type": "application/json"
+      },
+      "method": "POST",
+      "data": ""
+    }).then((response)=>{
+      console.log(response)
+     
+      if(response.errMsg=="cloud.callContainer:ok")
+      {
+        const data=response.data
+        const array=[];
+        
+        for(let i = 0; i <data.length; i++)
+        {
+          const optionss=[];
+          optionss=[{code:"A",option:data[i].A},
+          {code:"B",option:data[i].B},
+          {code:"C",option:data[i].C},
+          {code:"D",option:data[i].D}]
+          array.push({
+            title:data[i].title,
+            options:optionss,
+            correct: data[i].correct,
+            current:""
+          })
         }
-      })
-      .then(res => {
-        activityScore.add({
-          data: {
-            ...examResult,
-            createDate: db.serverDate()
-          }
+        this.setData({
+          list:array
         })
-        // 跳转到答题结果页，查看成绩
-        wx.reLaunch({
-          url: '../question/result?id=' + e.detail.value
-        });
-        wx.hideLoading();
-    },*/
-  // 生命周期函数--监听页面加载
+        console.log(this.data.list[0].options)
+    
+        }
+      //请求后端数据失败
+      else{
+        console.log("获取数据失败")
+        wx.hideLoading()
+        wx.showToast({
+          title: '服务器出现故障，获取数据失败',
+          icon: 'none',
+          duration: 2000
+        })
+      }
+      wx.hideLoading();
+    })
+    },
+    submit()
+    {
+      wx.showLoading({
+        title: '系统判分中'
+      });
+      const data=this.data.list;
+      var score=0;
+      for(let i = 0; i <data.length; i++)
+      {
+          if(data[i].current==data[i].correct)
+          score+=5
+      }
+      
+      wx.redirectTo({
+        url: '/pages/question/result?score='+score,
+      })
+    }
+
 
 })

@@ -30,4 +30,6 @@
 <view class="weui-btn-area">
     <button class="weui-btn" type="primary" bindtap="submitForm">认证</button>
   </view>
+  <view class="hint">你所填写的信息仅用于校友认证,不做其他用途</view>
+  <view class="hint">进行认证即代表同意授权相关信息</view>
   <mp-loading show="{{loading}}" duration="350" type="circle"tips="认证中，请稍等" ></mp-loading>

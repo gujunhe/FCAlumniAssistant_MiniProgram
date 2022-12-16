@@ -1,1 +1,7 @@
 /* pages/certificate/certificate.wxss */
+.hint{
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  color: crimson;
+  text-align: center;
+}

@@ -1,5 +1,5 @@
 /* description/description.wxss */
-<<<<<<< Updated upstream
+
 .image1{ 
   margin-top: 10rpx; 
   width: 98%; 
@@ -65,7 +65,7 @@
 .progress{ 
   margin-left: 10%; 
   width: 80%; 
-=======
+}
 .image1{
   margin-top: 10rpx;
   width: 98%;
@@ -125,5 +125,5 @@
 .progress{
   margin-left: 10%;
   width: 80%;
->>>>>>> Stashed changes
+
 }

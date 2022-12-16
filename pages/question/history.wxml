@@ -1,11 +1,8 @@
 <view class="mw-page">
   <view class="cu-list menu mw-menu">
-    <view class="cu-item arrow" wx:for="{{historyList}}" wx:key="index" bindtap="goToResult" data-id="{{item._id}}">
+    <view class="cu-item arrow" wx:for="{{historyList}}" wx:key="index" bindtap="goToResult" data-id="{{item.gain}}">
       <view class='content'>
-        <text class='text-black'>答题记录</text>
-      </view>
-      <view class='action'>
-        <text class='text-grey text-sm'>{{item.date}}</text>
+        <text class='text-black'>{{item.time}}:获得{{item.gain}}分</text>
       </view>
     </view>
   </view>

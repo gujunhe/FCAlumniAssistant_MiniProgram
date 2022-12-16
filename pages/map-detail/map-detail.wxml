@@ -3,7 +3,6 @@
 <cover-view class="cover-view">
 <button 	 bindtap="greetingtap" type="primary" style="width: 200rpx;">留言祝福</button></cover-view>
 
-
 </pano>
 
 <mp-dialog title="留言祝福" show="{{flag}}" buttons="{{buttons}}" bindbuttontap="buttontap">

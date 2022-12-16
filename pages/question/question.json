@@ -1,13 +1,4 @@
 {
-  "usingComponents": {},
-  "pages":[
-    "pages/question/test",
-    "pages/question/history",
-    "pages/question/rank"
-  ],
-  "window":{
-    "backgroundcolor": 	"#AFEEEE",
-    "backgroundTextStyle":"light"
-  }
+  "usingComponents": {}
 
 }

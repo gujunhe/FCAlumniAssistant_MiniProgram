@@ -1,8 +1,5 @@
 {
-  "usingComponents": {},
-  "window":{
-    "backgroundcolor": 	"#AFEEEE",
-    "backgroundTextStyle":"light"
-  }
+  "usingComponents": {}
+
 
 }

@@ -4,48 +4,36 @@ const db = wx.cloud.database();
 const activityRecord = db.collection('activityRecord');
 */
 //保存答题记录
-wx.cloud.callContainer({
-  "config": {
-    "env": "prod-3g07ynlp121f9201"
-  },
-  "path": "/Weixin/insertNewRecord?openId?score",
-  "header": {
-    "X-WX-SERVICE": "springboot-fchz",
-    "content-type": "application/json"
-  },
-  "method": "POST",
-  "data": ""
-})
+
 
 Page({
   data: {
-    totalScore: null
+    score:null
   },
 
   onLoad(options) {
     // 查看答题成绩
-    this.getExamResult(options.id);
-  },
 
-  // 系统自动判分
-  getExamResult(id){
-    wx.showLoading({
-      title: '系统判分中'
-    });
-    activityRecord
-    .doc(id)
-    .get()
-    .then(res => {
-      let examResult = res.data;
-      
-      let { wrong, totalScore } = examResult;
-      this.setData({
-        totalScore
-      })
-
-      wx.hideLoading();
+    
+    this.setData({
+      score:options.score
     })
+
+    wx.cloud.callContainer({
+      "config": {
+        "env": "prod-3g07ynlp121f9201"
+      },
+      "path": "/Weixin/insertNewRecord?id="+getApp().globalData.userInfo.openid+"&score="+options.score,
+      "header": {
+        "X-WX-SERVICE": "springboot-fchz",
+        "content-type": "application/json"
+      },
+      "method": "POST",
+      "data": ""
+    })
+
   },
+
 
   // 再答一次
   toDoTestAgain(){

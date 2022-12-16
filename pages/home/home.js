@@ -91,17 +91,31 @@ Page({
     
           break;
         case 1:
-          let plugin = requirePlugin('routePlan');
-          let key = 'P2KBZ-H7FKU-SE4VQ-BSQF6-YYK2F-ADF6T';  //使用在腾讯位置服务申请的key
-          let referer = 'FC校友助手';   //调用插件的app的名称
-          let endPoint = JSON.stringify({  //终点
-          'name': '福州大学计算机与大数据学院院庆地点',
-          'latitude': 26.058956,
-        'longitude': 119.197671
-          });
-          wx.navigateTo({
-          url: 'plugin://routePlan/index?key=' + key + '&referer=' + referer + '&endPoint=' + endPoint
-});
+//           let plugin = requirePlugin('routePlan');
+//           let key = 'P2KBZ-H7FKU-SE4VQ-BSQF6-YYK2F-ADF6T';  //使用在腾讯位置服务申请的key
+//           let referer = 'FC校友助手';   //调用插件的app的名称
+//           let endPoint = JSON.stringify({  //终点
+//           'name': '福州大学计算机与大数据学院院庆地点',
+//           'latitude': 26.058956,
+//         'longitude': 119.197671
+//           });
+//           wx.navigateTo({
+//           url: 'plugin://routePlan/index?key=' + key + '&referer=' + referer + '&endPoint=' + endPoint
+// });
+
+   //返回可以用于 wx.openLocation 的经纬度
+
+    const latitude = 26.058956
+    const longitude =119.197671
+    const name="福州大学计算机与大数据学院院庆地点"
+    wx.openLocation({
+      latitude,
+      longitude,
+      name,
+      scale: 18
+    })
+
+
           break;
         case 2:
           wx.navigateTo({

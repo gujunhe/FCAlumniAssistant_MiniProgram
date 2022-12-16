@@ -40,12 +40,17 @@ swiper image{
 .alumnus-container
 {
   display: flex;
-  height: 1000rpx;
+  flex-direction: column;
+  height: 750rpx;
   border-radius: 15rpx;
   margin: 10rpx;
   background-color: white;
 }
-
+.alumnus-title
+{
+  display: flex;
+  flex-direction: row;
+}
 .news0{
   font-size: 40rpx;
   margin-left: 20rpx;
@@ -60,8 +65,8 @@ swiper image{
 }
 .news1{
   font-size: 25rpx;
-  margin-left:  -190rpx;
-  margin-top: 90rpx;
+  margin-left:  20rpx;
+  margin-top: 5rpx;
   color: rgb(0, 0, 0);
 }
 .news1_1{
@@ -137,43 +142,43 @@ swiper image{
   color: rgb(206, 25, 25);
 }
 .act1{
-  margin-left:  -153rpx;
+  margin-left:  20rpx;
   margin-top: 400rpx;
   font-size: 25rpx;
   color: rgb(0, 0, 0);
 }
 .act2{
-  margin-left:  -493rpx;
+  margin-left:  20rpx;
   margin-top: 440rpx;
   font-size: 25rpx;
   color: rgb(0, 0, 0);
 }
 .act3{
-  margin-left:  -393rpx;
+  margin-left:  20rpx;
   margin-top: 480rpx;
   font-size: 25rpx;
   color: rgb(0, 0, 0);
 }
 .act4{
-  margin-left:  -369rpx;
+  margin-left:  20rpx;
   margin-top: 520rpx;
   font-size: 25rpx;
   color: rgb(0, 0, 0);
 }
 .act5{
-  margin-left:  -566rpx;
+  margin-left:  20rpx;
   margin-top: 560rpx;
   font-size: 25rpx;
   color: rgb(0, 0, 0);
 }
 .act6{
-  margin-left:  -517rpx;
+  margin-left:  20rpx;
   margin-top: 600rpx;
   font-size: 25rpx;
   color: rgb(0, 0, 0);
 }
 .act7{
-  margin-left:  -442rpx;
+  margin-left:  20rpx;
   margin-top: 640rpx;
   font-size: 25rpx;
   color: rgb(0, 0, 0);

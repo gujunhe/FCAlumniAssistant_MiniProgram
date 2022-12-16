@@ -4,17 +4,14 @@
     <view class='page-head'>
       <view class="mw-title">
         <view>有奖答题</view>
-      <view class="mw-title">共10题，满分100分</view>
-      <view class="mw-title">用户获得了</view>
+      <view class="mw-title">共5题，满分25分</view>
+      <view class="mw-title">你获得了</view>
       </view>
       <view class='page-score'>
-        <text class="score-num text-red text-bold">{{sum*10}}分</text>
+        <text class="score-num text-red text-bold">{{score}}积分</text>
       </view>
     </view>
     <view class='page-footer'>
-      <view class="point">
-        <view wx: if = "{{userScore > -1}}">获得积分{{sum*10}}</view>
-      </view>
       <view class="mw-button">
         <button bindtap="toDoTestAgain" hover-class="other-button-hover" class="cu-btn bg-red round lg"> 再次挑战 </button>
       </view>

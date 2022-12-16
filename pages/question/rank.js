@@ -2,40 +2,60 @@
 //获取应用实例
 const app = getApp()
 
-// 连接云数据库
-const db = wx.cloud.database();
-// 获取集合的引用
-const activityScore = db.collection('activityScore');
-// 数据库操作符
-const _ = db.command;
 */
-//获取答题排行榜
-wx.cloud.callContainer({
-  "config": {
-    "env": "prod-3g07ynlp121f9201"
-  },
-  "path": "Weixin/getListOfAnswer",
-  "header": {
-    "X-WX-SERVICE": "springboot-fchz",
-    "content-type": "application/json"
-  },
-  "method": "GET",
-  "data": ""
-})
+
 Page({
   data: {
     rankList: []
   },
   
   onLoad() {
-    this.getRankList();
-  },
-
-  getRankList() {
+    // this.getRankList();
     // 显示 loading 提示框
     wx.showLoading({
       title: '拼命加载中'
     });
+    //获取答题排行榜
+wx.cloud.callContainer({
+  "config": {
+    "env": "prod-3g07ynlp121f9201"
+  },
+  "path": "/Weixin/getListOfAnswer",
+  "header": {
+    "X-WX-SERVICE": "springboot-fchz",
+    "content-type": "application/json"
+  },
+  "method": "GET",
+  "data": ""
+}).then((response)=>{
+  console.log(response)
+  const data=response.content
+  if(response.errMsg=="cloud.callContainer:ok")
+  {
+    const data=response.data
+    const array=[]
+
+
+    this.setData({
+      rankList:data
+    })
+    }
+  //请求后端数据失败
+  else{
+    console.log("获取数据失败")
+    wx.hideLoading()
+    wx.showToast({
+      title: '服务器出现故障，获取数据失败',
+      icon: 'none',
+      duration: 2000
+    })
+  }
+  wx.hideLoading();
+})
+  },
+
+  getRankList() {
+
     // 数据库集合的聚合操作实例
     activityScore
     .where({       //类似于where，对记录进行筛选

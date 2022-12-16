@@ -1,5 +1,6 @@
 // pages/donation/donation.js
-Page({
+const filter = require('../../utils/filter');
+Page(filter.loginCheck({
 
   /**
    * 页面的初始数据
@@ -128,10 +129,10 @@ Page({
   onReachBottom() {
     if(this.data.isloading) return 
     if(this.data.pageSize * this.data.page >= this.data.total) {
-      wx.showToast({
-        title: 'No More Information!',
-        icon: 'none'
-      })
+      // wx.showToast({
+      //   title: 'No More Information!',
+      //   icon: 'none'
+      // })
       return 
     }
     this.setData({
@@ -146,4 +147,4 @@ Page({
   onShareAppMessage() {
 
   }
-})
+}))

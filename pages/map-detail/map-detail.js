@@ -234,7 +234,7 @@ Page({
     const barrageComp = this.selectComponent('.barrage')
     this.barrage = barrageComp.getBarrageInstance({
       font: 'bold 16px sans-serif',
-      duration: 40,
+      duration: 60,
       lineHeight: 2,
       mode: 'separate',
       padding: [10, 0, 10, 0],

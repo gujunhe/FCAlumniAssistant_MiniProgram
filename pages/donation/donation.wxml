@@ -4,18 +4,11 @@
 <view class="picture">
     <image src="{{item.picture}}" ></image>
   </view >
-<<<<<<< Updated upstream
+
   <view class="info" >
     <text class="title" >{{item.name}}</text>   
     <text>当前进度：</text>
-    <l-progress percent="{{progList[item.id-1] * 100}}" show-info="{{true}}" text-color='black' text-position="right" active-color="#49b877" background-color="#BEBEBE" l-class="progress"> </l-progress>
-=======
-  <view class="info" bindtap="getConcreteInfo">
-    <text>{{item.name}}</text>   
-    <text>地址：{{item.address}}</text>
-    <text>电话：{{item.phone}}</text>
-    <!-- 后端确定进度条数值 -->
+    <l-progress percent="{{progList[item.id-2] * 100}}" show-info="{{true}}" text-color='black' text-position="right" active-color="#49b877" background-color="#BEBEBE" l-class="progress"> </l-progress>
 
->>>>>>> Stashed changes
   </view>
 </navigator>
